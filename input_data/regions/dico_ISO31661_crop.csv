@@ -1,0 +1,294 @@
+Index,ISO-Alpha3,Sub-code,Name,Europen Union,Maize,Rice,Soybean,Wheat
+0,XXX,XXX,Unknown,,0,0,0,0
+1,AFG,AFG,Afghanistan,,6,6,6,6
+2,ALA,ALA,Aland,,6,6,6,6
+3,ALB,ALB,Albania,,6,6,6,6
+4,DZA,DZA,Algeria,,6,6,6,6
+5,ASM,ASM,American Samoa,,6,6,6,6
+6,AND,AND,Andorra,,6,6,6,6
+7,AGO,AGO,Angola,,6,6,6,6
+8,AIA,AIA,Anguilla,,6,6,6,6
+9,ATA,ATA,Antarctica,,6,6,6,6
+10,ATG,ATG,Antigua and Barbuda,,6,6,6,6
+11,ARG,ARG,Argentina,,5,6,3,6
+12,ARM,ARM,Armenia,,6,6,6,6
+13,ABW,ABW,Aruba,,6,6,6,6
+14,XAU,XAU,Ashmore and Cartier Islands,,6,6,6,6
+15,AUS,AUS,Australia,,6,6,6,6
+16,AUS,AUS-XA,Australia - North,,6,6,6,6
+17,AUS,AUS-XB,Australia - South,,6,6,6,6
+18,AUS,AUS-WA,Australia - West,,6,6,6,6
+19,XXC,XXC,Australian Indian Ocean Territories,,6,6,6,6
+20,AUT,AUT,Austria,EU27,4,6,6,1
+21,AZE,AZE,Azerbaijan,,6,6,6,6
+22,BHR,BHR,Bahrain,,6,6,6,6
+23,BGD,BGD,Bangladesh,,6,4,6,6
+24,BRB,BRB,Barbados,,6,6,6,6
+25,BLR,BLR,Belarus,,6,6,6,6
+26,BEL,BEL,Belgium,EU27,4,6,6,1
+27,BLZ,BLZ,Belize,,6,6,6,6
+28,BEN,BEN,Benin,,6,6,6,6
+29,BMU,BMU,Bermuda,,6,6,6,6
+30,BTN,BTN,Bhutan,,6,6,6,6
+31,BOL,BOL,Bolivia,,6,6,6,6
+32,BIH,BIH,Bosnia and Herzegovina,,6,6,6,6
+33,BWA,BWA,Botswana,,6,6,6,6
+34,BRA,BRA,Brazil,,3,6,1,6
+35,BRA,BRA-XE,Brazil - Centerwest,,3,6,1,6
+36,BRA,BRA-XA,Brazil - North,,3,6,1,6
+37,BRA,BRA-XB,Brazil - Northeast,,3,6,1,6
+38,BRA,BRA-XC,Brazil - South,,3,6,1,6
+39,BRA,BRA-XD,Brazil - Southeast,,3,6,1,6
+40,IOT,IOT,British Indian Ocean Territory,,6,6,6,6
+41,VGB,VGB,British Virgin Islands,,6,6,6,6
+42,BRN,BRN,Brunei,,6,6,6,6
+43,BGR,BGR,Bulgaria,EU27,4,6,6,1
+44,BFA,BFA,Burkina Faso,,6,6,6,6
+45,BDI,BDI,Burundi,,6,6,6,6
+46,KHM,KHM,Cambodia,,6,6,6,6
+47,CMR,CMR,Cameroon,,6,6,6,6
+48,CAN,CAN,Canada,,6,6,6,6
+49,CAN,CAN-XB,Canada - Atlantic,,6,6,6,6
+50,CAN,CAN-BC,Canada - British Columbia,,6,6,6,6
+51,CAN,CAN-ON,Canada - Ontario,,6,6,6,6
+52,CAN,CAN-XA,Canada - Prairies,,6,6,6,6
+53,CAN,CAN-QC,Canada - Quebec,,6,6,6,6
+54,CAN,CAN-XC,Canada - Territories,,6,6,6,6
+55,CPV,CPV,Cape Verde,,6,6,6,6
+56,BES,BES,Caribbean Netherlands,,6,6,6,6
+57,CYM,CYM,Cayman Islands,,6,6,6,6
+58,CAF,CAF,Central African Republic,,6,6,6,6
+59,TCD,TCD,Chad,,6,6,6,6
+60,CHL,CHL,Chile,,6,6,6,6
+61,CHN,CHN-XE,China - Central,,2,1,4,2
+62,CHN,CHN-XC,China - East,,2,1,4,2
+63,CHN,CHN-XA,China - North,,2,1,4,2
+64,CHN,CHN-XB,China - Northeast,,2,1,4,2
+65,CHN,CHN-XG,China - Northwest,,2,1,4,2
+66,CHN,CHN-XD,China - South,,2,1,4,2
+67,CHN,CHN-XF,China - Southwest,,2,1,4,2
+68,COL,COL,Colombia,,6,6,6,6
+69,COM,COM,Comoros,,6,6,6,6
+70,COK,COK,Cook Islands,,6,6,6,6
+71,CRI,CRI,Costa Rica,,6,6,6,6
+72,HRV,HRV,Croatia,EU27,4,6,6,1
+73,CUB,CUB,Cuba,,6,6,6,6
+74,CUW,CUW,Curacao,,6,6,6,6
+75,CYP,CYP,Cyprus,EU27,4,6,6,1
+76,CZE,CZE,Czech Republic,EU27,4,6,6,1
+77,COD,COD,Democratic Republic of the Congo,,6,6,6,6
+78,DNK,DNK,Denmark,EU27,4,6,6,1
+79,DJI,DJI,Djibouti,,6,6,6,6
+80,DMA,DMA,Dominica,,6,6,6,6
+81,DOM,DOM,Dominican Republic,,6,6,6,6
+82,TLS,TLS,East Timor,,6,6,6,6
+83,ECU,ECU,Ecuador,,6,6,6,6
+84,EGY,EGY,Egypt,,6,6,6,6
+85,SLV,SLV,El Salvador,,6,6,6,6
+86,GNQ,GNQ,Equatorial Guinea,,6,6,6,6
+87,ERI,ERI,Eritrea,,6,6,6,6
+88,EST,EST,Estonia,EU27,4,6,6,1
+89,SWZ,SWZ,Eswatini,,6,6,6,6
+90,ETH,ETH,Ethiopia,,6,6,6,6
+91,FLK,FLK,Falkland Islands,,6,6,6,6
+92,FRO,FRO,Faroe Islands,,6,6,6,6
+93,FSM,FSM,Federated States of Micronesia,,6,6,6,6
+94,FJI,FJI,Fiji,,6,6,6,6
+95,FIN,FIN,Finland,EU27,4,6,6,1
+96,FRA,FRA,France,EU27,4,6,6,1
+97,GUF,GUF,French Guiana,,6,6,6,6
+98,PYF,PYF,French Polynesia,,6,6,6,6
+99,ATF,ATF,French Southern and Antarctic Lands,,6,6,6,6
+100,GAB,GAB,Gabon,,6,6,6,6
+101,GEO,GEO,Georgia,,6,6,6,6
+102,DEU,DEU,Germany,EU27,4,6,6,1
+103,GHA,GHA,Ghana,,6,6,6,6
+104,GRC,GRC,Greece,EU27,4,6,6,1
+105,GRL,GRL,Greenland,,6,6,6,6
+106,GRD,GRD,Grenada,,6,6,6,6
+107,GLP,GLP,Guadeloupe,,6,6,6,6
+108,GUM,GUM,Guam,,6,6,6,6
+109,GTM,GTM,Guatemala,,6,6,6,6
+110,GGY,GGY,Guernsey,,6,6,6,6
+111,GIN,GIN,Guinea,,6,6,6,6
+112,GNB,GNB,Guinea-Bissau,,6,6,6,6
+113,GUY,GUY,Guyana,,6,6,6,6
+114,HTI,HTI,Haiti,,6,6,6,6
+115,HMD,HMD,Heard Island and McDonald Islands,,6,6,6,6
+116,HND,HND,Honduras,,6,6,6,6
+117,HKG,HKG,Hong Kong,,6,6,6,6
+118,HUN,HUN,Hungary,EU27,4,6,6,1
+119,ISL,ISL,Iceland,,6,6,6,6
+120,IND,IND,India,,6,2,5,3
+121,IDN,IDN,Indonesia,,6,3,6,6
+122,IRN,IRN,Iran,,6,6,6,6
+123,IRQ,IRQ,Iraq,,6,6,6,6
+124,IRL,IRL,Ireland,EU27,4,6,6,1
+125,IMN,IMN,Isle of Man,,6,6,6,6
+126,ISR,ISR,Israel,,6,6,6,6
+127,ITA,ITA,Italy,EU27,4,6,6,1
+128,CIV,CIV,Ivory Coast,,6,6,6,6
+129,JAM,JAM,Jamaica,,6,6,6,6
+130,JPN,JPN,Japan,,6,6,6,6
+131,JEY,JEY,Jersey,,6,6,6,6
+132,JOR,JOR,Jordan,,6,6,6,6
+133,KAZ,KAZ,Kazakhstan,,6,6,6,6
+134,KEN,KEN,Kenya,,6,6,6,6
+135,KIR,KIR,Kiribati,,6,6,6,6
+136,XXK,XXK,Kosovo,,6,6,6,6
+137,KWT,KWT,Kuwait,,6,6,6,6
+138,KGZ,KGZ,Kyrgyzstan,,6,6,6,6
+139,LAO,LAO,Laos,,6,6,6,6
+140,LVA,LVA,Latvia,EU27,4,6,6,1
+141,LBN,LBN,Lebanon,,6,6,6,6
+142,LSO,LSO,Lesotho,,6,6,6,6
+143,LBR,LBR,Liberia,,6,6,6,6
+144,LBY,LBY,Libya,,6,6,6,6
+145,LIE,LIE,Liechtenstein,,6,6,6,6
+146,LTU,LTU,Lithuania,EU27,4,6,6,1
+147,LUX,LUX,Luxembourg,EU27,4,6,6,1
+148,MAC,MAC,Macau,,6,6,6,6
+149,MDG,MDG,Madagascar,,6,6,6,6
+150,MWI,MWI,Malawi,,6,6,6,6
+151,MYS,MYS,Malaysia,,6,6,6,6
+152,MDV,MDV,Maldives,,6,6,6,6
+153,MLI,MLI,Mali,,6,6,6,6
+154,MLT,MLT,Malta,EU27,4,6,6,1
+155,MHL,MHL,Marshall Islands,,6,6,6,6
+156,MTQ,MTQ,Martinique,,6,6,6,6
+157,MRT,MRT,Mauritania,,6,6,6,6
+158,MUS,MUS,Mauritius,,6,6,6,6
+159,MYT,MYT,Mayotte,,6,6,6,6
+160,MEX,MEX,Mexico,,6,6,6,6
+161,MDA,MDA,Moldova,,6,6,6,6
+162,MCO,MCO,Monaco,,6,6,6,6
+163,MNG,MNG,Mongolia,,6,6,6,6
+164,MNE,MNE,Montenegro,,6,6,6,6
+165,MSR,MSR,Montserrat,,6,6,6,6
+166,MAR,MAR,Morocco,,6,6,6,6
+167,MOZ,MOZ,Mozambique,,6,6,6,6
+168,MMR,MMR,Myanmar,,6,6,6,6
+169,NAM,NAM,Namibia,,6,6,6,6
+170,NRU,NRU,Nauru,,6,6,6,6
+171,NPL,NPL,Nepal,,6,6,6,6
+172,NLD,NLD,Netherlands,EU27,4,6,6,1
+173,NCL,NCL,New Caledonia,,6,6,6,6
+174,NZL,NZL,New Zealand,,6,6,6,6
+175,NIC,NIC,Nicaragua,,6,6,6,6
+176,NER,NER,Niger,,6,6,6,6
+177,NGA,NGA,Nigeria,,6,6,6,6
+178,NIU,NIU,Niue,,6,6,6,6
+179,NFK,NFK,Norfolk Island,,6,6,6,6
+180,PRK,PRK,North Korea,,6,6,6,6
+181,MKD,MKD,North Macedonia,,6,6,6,6
+182,MNP,MNP,Northern Mariana Islands,,6,6,6,6
+183,NOR,NOR,Norway,,6,6,6,6
+184,OMN,OMN,Oman,,6,6,6,6
+185,PAK,PAK,Pakistan,,6,6,6,6
+186,PLW,PLW,Palau,,6,6,6,6
+187,PSE,PSE,Palestine,,6,6,6,6
+188,PAN,PAN,Panama,,6,6,6,6
+189,PNG,PNG,Papua New Guinea,,6,6,6,6
+190,PRY,PRY,Paraguay,,6,6,6,6
+191,CHN,CHN,People's Republic of China,,2,1,4,2
+192,PER,PER,Peru,,6,6,6,6
+193,PHL,PHL,Philippines,,6,6,6,6
+194,PCN,PCN,Pitcairn Islands,,6,6,6,6
+195,POL,POL,Poland,EU27,4,6,6,1
+196,PRT,PRT,Portugal,EU27,4,6,6,1
+197,PRI,PRI,Puerto Rico,,6,6,6,6
+198,QAT,QAT,Qatar,,6,6,6,6
+199,COG,COG,Republic of the Congo,,6,6,6,6
+200,REU,REU,Reunion,,6,6,6,6
+201,ROU,ROU,Romania,EU27,4,6,6,1
+202,RUS,RUS,Russia,,6,6,6,4
+203,RUS,RUS-XB,Russia - Central,,6,6,6,4
+204,RUS,RUS-XA,Russia - Central Black Earth,,6,6,6,4
+205,RUS,RUS-XC,Russia - East Siberian,,6,6,6,4
+206,RUS,RUS-XD,Russia - Far Eastern,,6,6,6,4
+207,RUS,RUS-KGD,Russia - Kaliningrad,,6,6,6,4
+208,RUS,RUS-XE,Russia - North,,6,6,6,4
+209,RUS,RUS-XF,Russia - North Caucasus,,6,6,6,4
+210,RUS,RUS-XG,Russia - Northwestern,,6,6,6,4
+211,RUS,RUS-XH,Russia - Ural,,6,6,6,4
+212,RUS,RUS-XI,Russia - Volga,,6,6,6,4
+213,RUS,RUS-XJ,Russia - Volga Vyatka,,6,6,6,4
+214,RUS,RUS-XK,Russia - West Siberian,,6,6,6,4
+215,RWA,RWA,Rwanda,,6,6,6,6
+216,BLM,BLM,Saint Barthelemy,,6,6,6,6
+217,SHN,SHN,Saint Helena,,6,6,6,6
+218,KNA,KNA,Saint Kitts and Nevis,,6,6,6,6
+219,LCA,LCA,Saint Lucia,,6,6,6,6
+220,MAF,MAF,Saint Martin,,6,6,6,6
+221,SPM,SPM,Saint Pierre and Miquelon,,6,6,6,6
+222,VCT,VCT,Saint Vincent and the Grenadines,,6,6,6,6
+223,WSM,WSM,Samoa,,6,6,6,6
+224,SMR,SMR,San Marino,,6,6,6,6
+225,STP,STP,Sao Tome and Principe,,6,6,6,6
+226,SAU,SAU,Saudi Arabia,,6,6,6,6
+227,SEN,SEN,Senegal,,6,6,6,6
+228,SRB,SRB,Serbia,,6,6,6,6
+229,SYC,SYC,Seychelles,,6,6,6,6
+230,XXG,XXG,Siachen Glacier,,6,6,6,6
+231,SLE,SLE,Sierra Leone,,6,6,6,6
+232,SGP,SGP,Singapore,,6,6,6,6
+233,SXM,SXM,Sint Maarten,,6,6,6,6
+234,SVK,SVK,Slovakia,EU27,4,6,6,1
+235,SVN,SVN,Slovenia,EU27,4,6,6,1
+236,SLB,SLB,Solomon Islands,,6,6,6,6
+237,SOM,SOM,Somalia,,6,6,6,6
+238,XSO,XSO,Somaliland,,6,6,6,6
+239,ZAF,ZAF,South Africa,,6,6,6,6
+240,SGS,SGS,South Georgia and the South Sandwich Islands,,6,6,6,6
+241,KOR,KOR,South Korea,,6,6,6,6
+242,SSD,SSD,South Sudan,,6,6,6,6
+243,ESP,ESP,Spain,EU27,4,6,6,1
+244,LKA,LKA,Sri Lanka,,6,6,6,6
+245,SDN,SDN,Sudan,,6,6,6,6
+246,SUR,SUR,Suriname,,6,6,6,6
+247,SWE,SWE,Sweden,EU27,4,6,6,1
+248,CHE,CHE,Switzerland,,6,6,6,6
+249,SYR,SYR,Syria,,6,6,6,6
+250,TWN,TWN,Taiwan,,6,6,6,6
+251,TJK,TJK,Tajikistan,,6,6,6,6
+252,TZA,TZA,Tanzania,,6,6,6,6
+253,THA,THA,Thailand,,6,6,6,6
+254,BHS,BHS,The Bahamas,,6,6,6,6
+255,GMB,GMB,The Gambia,,6,6,6,6
+256,TGO,TGO,Togo,,6,6,6,6
+257,TON,TON,Tonga,,6,6,6,6
+258,TTO,TTO,Trinidad and Tobago,,6,6,6,6
+259,TUN,TUN,Tunisia,,6,6,6,6
+260,TUR,TUR,Turkey,,6,6,6,6
+261,XCY,XCY,Turkish Republic of Northern Cyprus,,6,6,6,6
+262,TKM,TKM,Turkmenistan,,6,6,6,6
+263,TCA,TCA,Turks and Caicos Islands,,6,6,6,6
+264,TUV,TUV,Tuvalu,,6,6,6,6
+265,UGA,UGA,Uganda,,6,6,6,6
+266,UKR,UKR,Ukraine,,6,6,6,6
+267,ARE,ARE,United Arab Emirates,,6,6,6,6
+268,GBR,GBR,United Kingdom,,6,6,6,6
+269,VIR,VIR,United States Virgin Islands,,6,6,6,6
+270,USA,USA,United States of America,,1,6,2,5
+271,USA,USA-AK,United States of America - Alaska,,1,6,2,5
+272,USA,USA-HI,United States of America - Hawaii,,1,6,2,5
+273,USA,USA-XA,United States of America - Northeast,,1,6,2,5
+274,USA,USA-XD,United States of America - Northern Rockies and Plains,,1,6,2,5
+275,USA,USA-XH,United States of America - Northwest,,1,6,2,5
+276,USA,USA-XC,United States of America - Ohio Valley,,1,6,2,5
+277,USA,USA-XF,United States of America - South,,1,6,2,5
+278,USA,USA-XE,United States of America - Southeast,,1,6,2,5
+279,USA,USA-XG,United States of America - Southwest,,1,6,2,5
+280,USA,USA-XB,United States of America - Upper Midwest,,1,6,2,5
+281,USA,USA-XI,United States of America - West,,1,6,2,5
+282,URY,URY,Uruguay,,6,6,6,6
+283,UZB,UZB,Uzbekistan,,6,6,6,6
+284,VUT,VUT,Vanuatu,,6,6,6,6
+285,VAT,VAT,Vatican City,,6,6,6,6
+286,VEN,VEN,Venezuela,,6,6,6,6
+287,VNM,VNM,Vietnam,,6,5,6,6
+288,WLF,WLF,Wallis and Futuna,,6,6,6,6
+289,ESH,ESH,Western Sahara,,6,6,6,6
+290,YEM,YEM,Yemen,,6,6,6,6
+291,ZMB,ZMB,Zambia,,6,6,6,6
+292,ZWE,ZWE,Zimbabwe,,6,6,6,6
