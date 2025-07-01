@@ -1,3 +1,5 @@
 input_data/
 results/
+run_script/*.py
+core_fct/*old*
 **/__pycache__/
