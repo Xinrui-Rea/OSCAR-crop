@@ -44,26 +44,40 @@ def CROP(option='offline'):
     ##################################################
     ## 1. YIELD
     ##################################################
-    func1 = lambda x, a: a*x + 1
-    func2 = lambda x, a: np.log1p(a*x) + 1
-    func3 = lambda x, a, b: (1 + a*np.log1p(x)) / (1 + b*x)
-    func4 = lambda x, a, b: -b*np.expm1(-a*x) + 1
-    func5 = lambda x, a, b: np.exp(-a*(x-b)**2+a*b**2)
-    func6 = lambda x, a, b: np.log1p(np.exp(-a*(x-b)**2 + a*b**2)) / np.log(2)
-    func7 = lambda x, a, b: (np.exp(-a*b)+np.exp(a*b))/(np.exp(a*(x-b))+np.exp(-a*(x-b)))
-    func8 = lambda x, a, b: (np.exp(b) + 1) / (np.exp(-a*x+b) + 1)
-    func9 = lambda x, a, b, c: (np.exp(-a*b)+np.exp(c*b))/(np.exp(a*(x-b))+np.exp(-c*(x-b)))
-    func10 = lambda x, a, b, c: ((np.exp(b) + 1)/ (np.exp(-a*x+b) + 1))**c
+    func0 = lambda x, a: a * x + 1
+    func1 = lambda x, a: np.exp(a * x)
+    func2 = lambda x, a, b: np.exp(-a*(x-b)**2+a*b**2)
+    func3 = lambda x, a, b: 2/(np.exp(a*x)+np.exp(-b*x))
+    func4 = lambda x, a, b: (np.exp(b) + 1) / (np.exp(-a*x+b) + 1)
+    func5 = lambda x, a, b, c: (np.exp(-a*c)+np.exp(b*c))/(np.exp(a*(x-c))+np.exp(-b*(x-c)))
+    func6 = lambda x, a, b, c: ((np.exp(b) + 1)/ (np.exp(-a*x+b) + 1))**c
+
+    func_list = [func0, func1, func2, func3, func4, func5, func6]
     
     ## 2nd polynomial function without intercept
-    func_2nd = lambda a, b, x: a*x**2+b*x
+    func_2nd = lambda x, a, b: a*x**2+b*x
     ## Michaelis-Menten function
-    func_MM = lambda a, b, x: a*x/(x+b)
+    func_MM = lambda x, a, b: a*x/(x+b)
     ## Mitcherlich function
-    func_Mit = lambda a, b, x: a*np.expm1(b*x)
+    func_Mit = lambda x, a, b: a*np.expm1(b*x)
     ## George function
-    func_Geo = lambda a, b, x: a*(np.power(0.99, x)-1)+b*x
-    
+    func_Geo = lambda x, a, b: a*(np.power(0.99, x)-1)+b*x
+
+    def number_func(number):
+        return func_list[number]
+
+    def func_number(func):
+        return func_list.index(func)
+
+    def find_params(func):
+        param1 = [func0, func1]
+        param2 = [func2, func3, func4]
+        param3 = [func5, func6]
+        if func in param1: num = 1
+        if func in param2: num = 2
+        if func in param3: num = 3
+        return num
+
     ##===========
     ## 1.1. CO2
     ##===========
@@ -73,18 +87,14 @@ def CROP(option='offline'):
         units='1', core_dims=['spc_crop', 'reg_land'])
 
     def Eq__RC(Var, Par):
-        RC1 = func1(Var.D_CO2/Par.CO2_0, Par.a_CO2)
-        RC2 = func2(Var.D_CO2/Par.CO2_0, Par.a_CO2)
-        RC3 = func3(Var.D_CO2/Par.CO2_0, Par.a_CO2, Par.b_CO2)
-        RC4 = func4(Var.D_CO2/Par.CO2_0, Par.a_CO2, Par.b_CO2)
-        RC5 = func5(Var.D_CO2/Par.CO2_0, Par.a_CO2, Par.b_CO2)
-        RC6 = func6(Var.D_CO2/Par.CO2_0, Par.a_CO2, Par.b_CO2)
-        RC7 = func7(Var.D_CO2/Par.CO2_0, Par.a_CO2, Par.b_CO2)
-        RC8 = func8(Var.D_CO2/Par.CO2_0, Par.a_CO2, Par.b_CO2)
-        RC = xr.concat([RC1.assign_coords(fct_YD=1), RC2.assign_coords(fct_YD=2), RC3.assign_coords(fct_YD=3),
-            RC4.assign_coords(fct_YD=4), RC5.assign_coords(fct_YD=5), RC6.assign_coords(fct_YD=6), 
-            RC7.assign_coords(fct_YD=7), RC8.assign_coords(fct_YD=8)], dim='fct_YD')
-        return (Par.RC_switch*RC).sum('fct_YD', min_count=1)
+        RC = xr.full_like(Var.D_CO2, np.nan)
+        for func_co2 in func_list:
+            num_co2 = find_params(func_co2)
+            params_co2 = [getattr(Par, f'{chr(97+i)}_CO2') for i in range(num_co2)]
+            cond_co2 = Par.fct_CO2.astype(int) == func_list.index(func_co2)
+            RC = xr.where(cond_co2, func_co2(Var.D_CO2/Par.CO2_0, *params_co2), RC)
+        RC = RC.where(RC > 0)
+        return RC
 
     ##===================
     ## 1.2. TEMPERATURE
@@ -103,16 +113,15 @@ def CROP(option='offline'):
         units='1', core_dims=['spc_crop', 'reg_land'])
 
     def Eq__RT(Var, Par):
-        RT5 = func5(Var.D_Tgs, Par.a_Tgs, Par.b_Tgs)
-        RT6 = func6(Var.D_Tgs, Par.a_Tgs, Par.b_Tgs)
-        RT7 = func7(Var.D_Tgs, Par.a_Tgs, Par.b_Tgs)
-        RT8 = func8(Var.D_Tgs, Par.a_Tgs, Par.b_Tgs)
-        RT9 = func9(Var.D_Tgs, Par.a_Tgs, Par.b_Tgs, Par.c_Tgs)
-        RT10 = func10(Var.D_Tgs, Par.a_Tgs, Par.b_Tgs, Par.c_Tgs)
-        RT = xr.concat([RT5.assign_coords(fct_YD=5), RT6.assign_coords(fct_YD=6), RT7.assign_coords(fct_YD=7), 
-            RT8.assign_coords(fct_YD=8), RT9.assign_coords(fct_YD=9), RT10.assign_coords(fct_YD=10)], dim='fct_YD')
-        return (Par.RT_switch * RT).sum('fct_YD', min_count=1)
-
+        RT = xr.ones_like(Var.D_Tgs)
+        for func_temp in func_list:
+            num_temp = find_params(func_temp)
+            params_temp = [getattr(Par, f'{chr(97+i)}_Tgs') for i in range(num_temp)]
+            cond_temp = Par.fct_Tgs.astype(int) == func_list.index(func_temp)
+            RT = xr.where(cond_temp, func_temp(Var.D_Tgs, *params_temp), RT)
+        RT = RT.where(RT > 0)
+        return RT
+    
     ##=============
     ## 1.3. PRECIPITATION
     ##=============
@@ -130,15 +139,15 @@ def CROP(option='offline'):
         units='1', core_dims=['spc_crop', 'reg_land'])
 
     def Eq__RP(Var, Par):
-        RP5 = func5(Var.D_Pgs/Par.Pgs_0, Par.a_Pgs, Par.b_Pgs).where(Par.a_Pgs.irr == 'noirr', 1)
-        RP6 = func6(Var.D_Pgs/Par.Pgs_0, Par.a_Pgs, Par.b_Pgs).where(Par.a_Pgs.irr == 'noirr', 1)
-        RP7 = func7(Var.D_Pgs/Par.Pgs_0, Par.a_Pgs, Par.b_Pgs).where(Par.a_Pgs.irr == 'noirr', 1)
-        RP8 = func8(Var.D_Pgs/Par.Pgs_0, Par.a_Pgs, Par.b_Pgs).where(Par.a_Pgs.irr == 'noirr', 1)
-        RP9 = func9(Var.D_Pgs/Par.Pgs_0, Par.a_Pgs, Par.b_Pgs, Par.c_Pgs).where(Par.a_Pgs.irr == 'noirr', 1)
-        RP10 = func10(Var.D_Pgs/Par.Pgs_0, Par.a_Pgs, Par.b_Pgs, Par.c_Pgs).where(Par.a_Pgs.irr == 'noirr', 1)
-        RP = xr.concat([RP5.assign_coords(fct_YD=5), RP6.assign_coords(fct_YD=6), RP7.assign_coords(fct_YD=7), 
-            RP8.assign_coords(fct_YD=8), RP9.assign_coords(fct_YD=9), RP10.assign_coords(fct_YD=10)], dim='fct_YD')
-        return (Par.RP_switch * RP).sum('fct_YD', min_count=1)
+        RP = xr.full_like(Var.D_Pgs, np.nan)
+        for func_prec in func_list:
+            num_prec = find_params(func_prec)
+            params_prec = [getattr(Par, f'{chr(97+i)}_Pgs') for i in range(num_prec)]
+            cond_prec = Par.fct_Pgs.astype(int) == func_list.index(func_prec)
+            RP = xr.where(cond_prec, func_prec(Var.D_Pgs/Par.Pgs_0, *params_prec), RP)
+        RP = xr.where(RP.irr == 'firr', 1, RP)
+        RP = RP.where(RP > 0)
+        return RP
 
     ##================
     ## 1.4. FERTILIZER
@@ -159,12 +168,11 @@ def CROP(option='offline'):
 
     def Eq__RN(Var, Par):
         NI_0 = Par.N_fertl_0+Par.N_dep_0+Par.N_bnf
-        RN_2nd = func_2nd(Par.g_a, Par.g_b, Var.NI)/func_2nd(Par.g_a, Par.g_b, NI_0)
-        RN_MM = func_MM(Par.g2_a, Par.g2_b, Var.NI)/func_MM(Par.g2_a, Par.g2_b, NI_0)
-        RN_Mit = func_Mit(Par.g3_a, Par.g3_b, Var.NI)/func_Mit(Par.g3_a, Par.g3_b, NI_0)
-        RN_Geo = func_Geo(Par.g4_a, Par.g4_b, Var.NI)/func_Geo(Par.g4_a, Par.g4_b, NI_0)
-        return Par.RN_is_2nd*RN_2nd+Par.RN_is_MM*RN_MM+Par.RN_is_Mit*RN_Mit+Par.RN_is_Geo*RN_Geo
-    
+        RN = func_Geo(Var.NI / 100, Par.g_a, Par.g_b)/func_Geo(NI_0 / 100, Par.g_a, Par.g_b)
+        RN = xr.where(RN.spc_crop == 'soy', 1, RN)
+        RN = RN.where(RN > 0)
+        return RN
+
     ##===========
     ## 1.5. YIELD
     ##===========

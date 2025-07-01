@@ -34,20 +34,8 @@ import xarray as xr
 ##=================
 ## 1.1. CO2
 ##=================
-def load_CO2_misc(**useless):
-    ## initialization
-    Par = xr.Dataset()
-    
-    ## preindustrail CO2 concentration defined by ISIMIP 
-    Par['CO2_pi'] = xr.DataArray(284.73, attrs={'units':'ppm'})
-    Par['CO2_2015'] = xr.DataArray(399.95, attrs={'units':'ppm'})
-
-    ## return
-    return Par
-
 ## CO2-yield response parameters based on observations
 def load_RC_obs(**useless):
-    
     ## initialization
     Par = xr.Dataset()
     Par.coords['spc_crop'] = ['mai', 'ri1', 'ri2', 'soy', 'swh', 'wwh']
@@ -59,6 +47,19 @@ def load_RC_obs(**useless):
                         dims=('spc_crop', ), attrs={'units': 'ppm-1', 'range': '1std'})
 
     ## return
+    return Par
+
+def load_CO2_ISIMIP3b(models=['CYGMA1p74', 'EPIC-IIASA', 'ISAM', 'LDNDC', 'LPJmL','PEPIC', 'PROMET', 'SIMPLACE-LINTUL5'], recalibrate=False, **useless):
+    # load from existing file
+    if os.path.isfile('input_data/parameters/crop/CO2_ISIMIP3b__regional.nc') and not recalibrate:
+        Par = xr.load_dataset('input_data/parameters/crop/CO2_ISIMIP3b__regional.nc')
+    ## otherwise, launch calibration
+    else:
+        raise RuntimeError('embedded calibration not available yet')
+    
+    for model in Par.mod_YD_crop.values:
+        if model not in models: Par = Par.drop_sel(mod_YD_crop=model)
+        
     return Par
 
 ##=================
@@ -129,6 +130,20 @@ def load_RT_obs(**useless):
     ## return
     return Par
 
+def load_climate_ISIMIP3b(models=['CYGMA1p74', 'EPIC-IIASA', 'ISAM', 'LDNDC', 'LPJmL','PEPIC', 'PROMET', 'SIMPLACE-LINTUL5'], recalibrate=False, **useless):
+    ## load from existing file
+    if os.path.isfile('input_data/parameters/crop/climate_ISIMIP3b__regional.nc') and not recalibrate:
+        Par = xr.load_dataset('input_data/parameters/crop/climate_ISIMIP3b__regional.nc')
+    ## otherwise, launch calibration
+    else:
+        raise RuntimeError('embedded calibration not available yet')
+    
+    for model in Par.mod_YD_crop.values:
+        if model not in models: Par = Par.drop_sel(mod_YD_crop=model)
+
+    ## return
+    return Par
+
 ##================
 ## 1.3. FERTILIZER
 ##================
@@ -162,7 +177,7 @@ def load_Ndep_ISIMIP3b(recalibrate=False, **useless):
 ## biological nitrogen fixation
 def load_Nbnf_misc(**useless):
     ## initialization
-    Par = xr.load_dataset('/h/u145/liuxinrui/CROP/input_data/regions/region_coords.nc')
+    Par = xr.load_dataset('input_data/regions/region_coords.nc')
     Par.coords['spc_crop'] = ['mai', 'ri1', 'ri2', 'soy', 'swh', 'wwh']
     Par.coords['mod_bnf_soy'] = ['Ma_2022', 'Peoples_2009']
 
@@ -185,7 +200,7 @@ def load_Nbnf_misc(**useless):
     regions = [reg for reg in regions if reg in Par.reg_land_code.values]
     regs = list(set(regions).intersection(set(with_subregs)))
     for reg in regs:
-        regions = regions+split_region(reg, region_from='Code', region_to='Sub-code')
+        regions = regions+split_region(reg, region_from='ISO-Alpha3', region_to='Sub-code')
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_land_code':np.array(regions), 'mod_bnf_soy':'Ma_2022'}] = 53
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_land_code':np.array(regions), 'mod_bnf_soy':'Peoples_2009'}] = 88
     
@@ -194,7 +209,7 @@ def load_Nbnf_misc(**useless):
     regions = [reg for reg in regions if reg in Par.reg_land_code.values]
     regs = list(set(regions).intersection(set(with_subregs)))
     for reg in regs:
-        regions = regions+split_region(reg, region_from='Code', region_to='Sub-code')
+        regions = regions+split_region(reg, region_from='ISO-Alpha3', region_to='Sub-code')
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_land_code':np.array(regions), 'mod_bnf_soy':'Ma_2022'}] = 141
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_land_code':np.array(regions), 'mod_bnf_soy':'Peoples_2009'}] = 115
         
@@ -203,7 +218,7 @@ def load_Nbnf_misc(**useless):
     regions = [reg for reg in regions if reg in Par.reg_land_code.values]
     regs = list(set(regions).intersection(set(with_subregs)))
     for reg in regs:
-        regions = regions+split_region(reg, region_from='Code', region_to='Sub-code')
+        regions = regions+split_region(reg, region_from='ISO-Alpha3', region_to='Sub-code')
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_land_code':np.array(regions), 'mod_bnf_soy':'Ma_2022'}] = 172
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_land_code':np.array(regions), 'mod_bnf_soy':'Peoples_2009'}] = 193
     
@@ -212,7 +227,7 @@ def load_Nbnf_misc(**useless):
     regions = [reg for reg in regions if reg in Par.reg_land_code.values]
     regs = list(set(regions).intersection(set(with_subregs)))
     for reg in regs:
-        regions = regions+split_region(reg, region_from='Code', region_to='Sub-code')
+        regions = regions+split_region(reg, region_from='ISO-Alpha3', region_to='Sub-code')
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_land_code':np.array(regions), 'mod_bnf_soy':'Ma_2022'}] = 127
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_land_code':np.array(regions), 'mod_bnf_soy':'Peoples_2009'}] = 144
     
@@ -221,7 +236,7 @@ def load_Nbnf_misc(**useless):
     regions = [reg for reg in regions if reg in Par.reg_land_code.values]
     regs = list(set(regions).intersection(set(with_subregs)))
     for reg in regs:
-        regions = regions+split_region(reg, region_from='Code', region_to='Sub-code')
+        regions = regions+split_region(reg, region_from='ISO-Alpha3', region_to='Sub-code')
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_land_code':np.array(regions), 'mod_bnf_soy':'Ma_2022'}] = 156
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_land_code':np.array(regions), 'mod_bnf_soy':'Peoples_2009'}] = 136
     
@@ -230,7 +245,7 @@ def load_Nbnf_misc(**useless):
     regions = [reg for reg in regions if reg in Par.reg_land_code.values]
     regs = list(set(regions).intersection(set(with_subregs)))
     for reg in regs:
-        regions = regions+split_region(reg, region_from='Code', region_to='Sub-code')
+        regions = regions+split_region(reg, region_from='ISO-Alpha3', region_to='Sub-code')
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_land_code':np.array(regions)}] = 101
     
     ## BNF in Central Asia
@@ -238,7 +253,7 @@ def load_Nbnf_misc(**useless):
     regions = [reg for reg in regions if reg in Par.reg_land_code.values]
     regs = list(set(regions).intersection(set(with_subregs)))
     for reg in regs:
-        regions = regions+split_region(reg, region_from='Code', region_to='Sub-code')
+        regions = regions+split_region(reg, region_from='ISO-Alpha3', region_to='Sub-code')
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_land_code':np.array(regions)}] = 63
     
     ## BNF in West Asia
@@ -246,7 +261,7 @@ def load_Nbnf_misc(**useless):
     regions = [reg for reg in regions if reg in Par.reg_land_code.values]
     regs = list(set(regions).intersection(set(with_subregs)))
     for reg in regs:
-        regions = regions+split_region(reg, region_from='Code', region_to='Sub-code')
+        regions = regions+split_region(reg, region_from='ISO-Alpha3', region_to='Sub-code')
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_land_code':np.array(regions)}] = 27
     
     ## BNF in Europe
@@ -254,7 +269,7 @@ def load_Nbnf_misc(**useless):
     regions = [reg for reg in regions if reg in Par.reg_land_code.values]
     regs = list(set(regions).intersection(set(with_subregs)))
     for reg in regs:
-        regions = regions+split_region(reg, region_from='Code', region_to='Sub-code')
+        regions = regions+split_region(reg, region_from='ISO-Alpha3', region_to='Sub-code')
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_land_code':np.array(regions)}] = 117
     
     ## BNF in Oceania
@@ -262,13 +277,23 @@ def load_Nbnf_misc(**useless):
     regions = [reg for reg in regions if reg in Par.reg_land_code.values]
     regs = list(set(regions).intersection(set(with_subregs)))
     for reg in regs:
-        regions = regions+split_region(reg, region_from='Code', region_to='Sub-code')
+        regions = regions+split_region(reg, region_from='ISO-Alpha3', region_to='Sub-code')
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_land_code':np.array(regions)}] = 78
     
     Par = Par.swap_dims({'reg_land_code': 'reg_land'})
     return Par
 
+def load_RN_obs(**useless):
+    ## initialization
+    Par = xr.Dataset()
+    Par.coords['spc_crop'] = ['mai', 'ri1', 'ri2', 'soy', 'swh', 'wwh']
 
+    Par['g_a'] = xr.DataArray([-2998.80, -1546.20, -1546.20, 0, -4497.18, -4497.18], dims=('spc_crop', ), attrs={'units':'1'})
+    Par['g_b'] = xr.DataArray([-29.34, -14.96, -14.96, 0, -44.25, -44.25], dims=('spc_crop', ), attrs={'units':'kgN ha-1'})
+
+    return Par
+
+'''
 def load_RN_obs(**useless):
     ## initialization
     Par = xr.load_dataset('./input_data/regions/region_coords.nc')
@@ -328,45 +353,13 @@ def load_RN_obs(**useless):
     
     ## return
     return Par
-
-##================
-## 1.5. YIELD
-##================
-## crop yield parameters calibrated on different models participating in ISIMIP3b
-def load_YD_ISIMIP3b(models=['CYGMA1p74', 'EPIC-IIASA', 'ISAM', 'LDNDC', 'LPJmL','PEPIC', 'PROMET', 'SIMPLACE-LINTUL5'], **useless):
-    Par = xr.Dataset()
-    Par.coords['mod_YD_crop'] = models
-    Par.coords['fct_YD'] = np.arange(1, 11)
-    Par['RC_switch'] = xr.DataArray(np.zeros((len(models), len(Par.fct_YD))), dims=('mod_YD_crop', 'fct_YD'))
-    Par['RT_switch'] = xr.DataArray(np.zeros((len(models), len(Par.fct_YD))), dims=('mod_YD_crop', 'fct_YD'))
-    Par['RP_switch'] = xr.DataArray(np.zeros((len(models), len(Par.fct_YD))), dims=('mod_YD_crop', 'fct_YD'))
-    
-    Par0 = []
-    ## load from existing file
-    for model in models:
-        if os.path.isfile('input_data/parameters/crop/crop_'+model+'__regional.nc'):
-            Par1 = xr.load_dataset('input_data/parameters/crop/crop_'+model+'__regional.nc')
-            Par['RC_switch'].loc[{'mod_YD_crop':model, 'fct_YD':Par1['fct_CO2'].values}] = 1
-            Par['RT_switch'].loc[{'mod_YD_crop':model, 'fct_YD':Par1['fct_Tgs'].values}] = 1
-            Par['RP_switch'].loc[{'mod_YD_crop':model, 'fct_YD':Par1['fct_Pgs'].values}] = 1
-            Par1 = Par1.drop_vars(['fct_CO2', 'fct_Tgs', 'fct_Pgs'])
-            Par0.append(Par1.expand_dims('mod_YD_crop', -1).assign_coords(mod_YD_crop=[model]))
-        else:
-            raise RuntimeError(model+' parameter dataset not found')
-    
-    Par0.append(Par)
-    Par = xr.merge(Par0)
-    
-    ## return
-    return Par
-
-
+'''
 ##################################################
 ##   Z. WRAPPER
 ##################################################
 
 ## wrapping function
-def load_ISIMIP_param(mod_region='regional', recalibrate=False):
+def load_ISIMIP3b_param(mod_region='regional', recalibrate=False):
     '''
     Wrapper function to load all primary parameters.
     
@@ -388,11 +381,11 @@ def load_ISIMIP_param(mod_region='regional', recalibrate=False):
     print('loading primary parameters')
 
     ## list of loading fuctions
-    load_list = [load_CO2_misc, 
+    load_list = [
         load_Tl_ISIMIP3b, load_Tgs_ISIMIP3b, 
-        load_Pl_ISIMIP3b, load_Pgs_ISIMIP3b, 
-        load_Nfertl_ISIMIP3b, load_Ndep_ISIMIP3b, load_Nbnf_misc, load_RN_obs, 
-        load_YD_ISIMIP3b]
+        load_Pl_ISIMIP3b, load_Pgs_ISIMIP3b, load_climate_ISIMIP3b,
+        load_Ndep_ISIMIP3b, load_Nbnf_misc, load_RN_obs
+        ]
     
     ## return all
-    return xr.merge([load(mod_region=mod_region, recalibrate=recalibrate) for load in load_list])
+    return xr.merge([load(mod_region=mod_region, recalibrate=recalibrate) for load in load_list]).transpose('spc_crop', 'reg_land', 'irr', ...)
