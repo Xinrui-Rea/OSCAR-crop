@@ -36,8 +36,8 @@ def CROP(option='offline', use_MIT=True, use_Geo=False, use_2nd=False, use_MM=Fa
     
     if option == 'offline':
         from core.cls_main import Model
-        model = Model('OSCAR-crop')
-        
+        model = Model('OSCAR_crop')
+    
     ##################################################
     ## 1. YIELD
     ##################################################
