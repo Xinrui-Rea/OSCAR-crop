@@ -1,4 +1,4 @@
-# 🌾 OSCAR-CROP
+# 🌾 OSCAR-crop
 
 A crop emulator calibrated on GGCMI Phase 3 models.
 
