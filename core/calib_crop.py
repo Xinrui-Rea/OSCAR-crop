@@ -11,7 +11,7 @@ from core.paths import path_data
 ##================
 ## 1.4. FERTILIZER
 ##================
-def calib_Nfertl_ISIMIP3b(path_in='{path_data}input_data/drivers/', path_out='{path_data}input_data/parameters/', 
+def calib_Nfertl_ISIMIP3b(path_in=f'{path_data}drivers/', path_out=f'{path_data}parameters/', 
     mod_region='sub-national', **useless):
     
     crop_type = {'c3ann':['ri1', 'ri2', 'ric', 'swh', 'wwh', 'whe'], 'c3nfx':['soy'], 'c4ann':['mai']}
@@ -33,7 +33,7 @@ def calib_Nfertl_ISIMIP3b(path_in='{path_data}input_data/drivers/', path_out='{p
 
     return Par
 
-def calib_Ndep_ISIMIP3b(path_in='{path_data}input_data/drivers/', path_out='{path_data}input_data/parameters/',
+def calib_Ndep_ISIMIP3b(path_in=f'{path_data}drivers/', path_out=f'{path_data}parameters/',
     mod_region='sub-national',  **useless):
     
     ## load original data

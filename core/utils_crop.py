@@ -243,9 +243,9 @@ def load_cropland_weights(region='sub-national', axis='reg_code', soc='2015soc',
     '''
     if debug: print(f'>>> Running {sys._getframe().f_code.co_name} <<<')
     if region == 'sub-national':
-        return xr.load_dataarray('{path_data}regions/cropland_area.nc')
+        return xr.load_dataarray(f'{path_data}regions/cropland_area.nc')
     if region == 'national':
-        wgt = xr.load_dataset('{path_data}regions/cropland_area.nc')
+        wgt = xr.load_dataset(f'{path_data}regions/cropland_area.nc')
         wgt_na = aggreg_region(wgt, mod_region='National', old_axis=axis, new_axis=axis+'_new', debug=debug)
         for reg in wgt.coords[axis].values:
             if reg in wgt_na.coords[axis+'_new'].values:
@@ -255,7 +255,7 @@ def load_cropland_weights(region='sub-national', axis='reg_code', soc='2015soc',
         wgt = wgt['weight']
         return wgt
 
-def load_reg_coords(mod_region='Sub-national', dir='{path_data}regions/', file_suffix='crop', debug=False):
+def load_reg_coords(mod_region='Sub-national', dir=f'{path_data}regions/', file_suffix='crop', debug=False):
     '''
     Function to load coordinates for a given regional aggregation
 
@@ -268,7 +268,7 @@ def load_reg_coords(mod_region='Sub-national', dir='{path_data}regions/', file_s
     mod_region (str)        name of the regional aggregation, can choose from ['reg_code', 'National']
                             default = 'reg_code'
     dir (str)               directory of the coordinate files
-                            default = '{path_data}regions/'
+                            default = f'{path_data}regions/'
     file_suffix (str)       suffix of the coordinate files, e.g., 'crop' for crop-related coordinates
                             default = 'crop'
     debug (bool)            whether or not to print debug information
@@ -277,7 +277,7 @@ def load_reg_coords(mod_region='Sub-national', dir='{path_data}regions/', file_s
     if debug: print(f'>>> Running {sys._getframe().f_code.co_name} <<<')
     
     ## load regional codes
-    with open('{}OSCAR_reg_dict_{}.csv'.format(dir, file_suffix), 'r') as f: TMP = np.array([line for line in csv.reader(f)])
+    with open(dir + f'OSCAR_reg_dict_{file_suffix}.csv', 'r') as f: TMP = np.array([line for line in csv.reader(f)])
     reg_code = TMP[1:, TMP[0, :].tolist().index(mod_region)].tolist()
     ## delete duplicates
     reg_code = list(set(reg_code))
@@ -289,7 +289,7 @@ def load_reg_coords(mod_region='Sub-national', dir='{path_data}regions/', file_s
         reg_code.insert(0, 'XXX')
 
     ## load long region names
-    with open('{}OSCAR_reg_names_{}.csv'.format(dir, file_suffix)) as f: 
+    with open(dir + f'OSCAR_reg_names_{file_suffix}.csv') as f: 
         for line in csv.reader(f):
             if line[0] == mod_region: 
                 long_name = line[1:]

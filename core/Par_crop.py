@@ -166,58 +166,58 @@ def load_Nbnf_misc(**useless):
     Par['N_bnf'].loc[{'spc_crop':'soy'}] = 132
 
     ## BNF in South Asia
-    reg_list = convert_reg_code('Southern Asia', region_from='Sub-region', region_to='reg_code')
+    reg_list = convert_reg_code('Southern Asia', region_from='Sub-region', region_to='Sub-national')
     reg_list = [reg for reg in reg_list if reg in Par.reg_code.values]
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_code':reg_list, 'mod_bnf_soy':'Ma_2022'}] = 53
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_code':reg_list, 'mod_bnf_soy':'Peoples_2009'}] = 88
 
     ## BNF in Southeast Asia
-    reg_list = convert_reg_code('South-eastern Asia', region_from='Sub-region', region_to='reg_code')
+    reg_list = convert_reg_code('South-eastern Asia', region_from='Sub-region', region_to='Sub-national')
     reg_list = [reg for reg in reg_list if reg in Par.reg_code.values]
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_code':reg_list, 'mod_bnf_soy':'Ma_2022'}] = 141
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_code':reg_list, 'mod_bnf_soy':'Peoples_2009'}] = 115
 
     ## BNF in Africa
-    reg_list = convert_reg_code('Africa', region_from='Continent', region_to='reg_code')
+    reg_list = convert_reg_code('Africa', region_from='Continent', region_to='Sub-national')
     reg_list = [reg for reg in reg_list if reg in Par.reg_code.values]
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_code':reg_list, 'mod_bnf_soy':'Ma_2022'}] = 172
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_code':reg_list, 'mod_bnf_soy':'Peoples_2009'}] = 193
 
     ## BNF in North America
-    reg_list = convert_reg_code('Northern America', region_from='Sub-region', region_to='reg_code')
+    reg_list = convert_reg_code('Northern America', region_from='Sub-region', region_to='Sub-national')
     reg_list = [reg for reg in reg_list if reg in Par.reg_code.values]
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_code':reg_list, 'mod_bnf_soy':'Ma_2022'}] = 127
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_code':reg_list, 'mod_bnf_soy':'Peoples_2009'}] = 144
 
     ## BNF in South America
-    reg_list = convert_reg_code('Latin America and the Caribbean', region_from='Sub-region', region_to='reg_code')
+    reg_list = convert_reg_code('Latin America and the Caribbean', region_from='Sub-region', region_to='Sub-national')
     reg_list = [reg for reg in reg_list if reg in Par.reg_code.values]
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_code':reg_list, 'mod_bnf_soy':'Ma_2022'}] = 156
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_code':reg_list, 'mod_bnf_soy':'Peoples_2009'}] = 136
     
     ## BNF in East Asia
-    reg_list = convert_reg_code('Eastern Asia', region_from='Sub-region', region_to='reg_code')
+    reg_list = convert_reg_code('Eastern Asia', region_from='Sub-region', region_to='Sub-national')
     reg_list = [reg for reg in reg_list if reg in Par.reg_code.values]
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_code':np.array(reg_list)}] = 101
 
     ## BNF in Central Asia
-    reg_list = convert_reg_code('Central Asia', region_from='Sub-region', region_to='reg_code')
+    reg_list = convert_reg_code('Central Asia', region_from='Sub-region', region_to='Sub-national')
     reg_list = [reg for reg in reg_list if reg in Par.reg_code.values]
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_code':np.array(reg_list)}] = 63
     
     ## BNF in West Asia
-    reg_list = convert_reg_code('Western Asia', region_from='Sub-region', region_to='reg_code')
+    reg_list = convert_reg_code('Western Asia', region_from='Sub-region', region_to='Sub-national')
     reg_list = [reg for reg in reg_list if reg in Par.reg_code.values]
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_code':reg_list}] = 27
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_code':reg_list}] = 27
     
     ## BNF in Europe
-    reg_list = convert_reg_code('Europe', region_from='Continent', region_to='reg_code')
+    reg_list = convert_reg_code('Europe', region_from='Continent', region_to='Sub-national')
     reg_list = [reg for reg in reg_list if reg in Par.reg_code.values]
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_code':reg_list}] = 117
 
     ## BNF in Oceania
-    reg_list = convert_reg_code('Oceania', region_from='Continent', region_to='reg_code')
+    reg_list = convert_reg_code('Oceania', region_from='Continent', region_to='Sub-national')
     reg_list = [reg for reg in reg_list if reg in Par.reg_code.values]
     Par['N_bnf'].loc[{'spc_crop':'soy', 'reg_code':reg_list}] = 78
 
