@@ -23,7 +23,7 @@
 **Load CROP emulator by running**
 
 ```python
-from core_fct.OSCAR_CROP import CROP
+from core.OSCAR_crop import CROP
 CROP = CROP()
 ```
 
