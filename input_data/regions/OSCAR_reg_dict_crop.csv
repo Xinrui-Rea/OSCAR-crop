@@ -1,0 +1,312 @@
+Sub-national,National,Maize,Rice,Soybean,Wheat,ISO3,ISO2,FIPS,Continent,Sub-region
+XXX,XXX,MAI6,RIC6,SOY6,WHE6,XXX,XX,XX,Others,
+ABW,NLD,MAI4,RIC6,SOY6,WHE1,ABW,AW,AA,Americas,Latin America and the Caribbean
+AFG,AFG,MAI6,RIC6,SOY6,WHE6,AFG,AF,AF,Asia,Southern Asia
+AGO,AGO,MAI6,RIC6,SOY6,WHE6,AGO,AO,AO,Africa,Sub-Saharan Africa
+AIA,GBR,MAI6,RIC6,SOY6,WHE6,AIA,AI,AV,Americas,Latin America and the Caribbean
+ALA,FIN,MAI4,RIC6,SOY6,WHE1,ALA,AX,FI,Europe,Northern Europe
+ALB,ALB,MAI6,RIC6,SOY6,WHE6,ALB,AL,AL,Europe,Southern Europe
+AND,AND,MAI6,RIC6,SOY6,WHE6,AND,AD,AN,Europe,Southern Europe
+ARE,ARE,MAI6,RIC6,SOY6,WHE6,ARE,AE,TC,Asia,Western Asia
+ARG,ARG,MAI5,RIC6,SOY3,WHE6,ARG,AR,AR,Americas,Latin America and the Caribbean
+ARM,ARM,MAI6,RIC6,SOY6,WHE6,ARM,AM,AM,Asia,Western Asia
+ASM,USA,MAI1,RIC6,SOY2,WHE5,ASM,AS,AQ,Oceania,Polynesia
+ATA,XXX,MAI6,RIC6,SOY6,WHE6,ATA,AQ,AY,Antarctica,Antarctica
+ATF,FRA,MAI4,RIC6,SOY6,WHE1,ATF,TF,FS,Africa,Sub-Saharan Africa
+ATG,ATG,MAI6,RIC6,SOY6,WHE6,ATG,AG,AC,Americas,Latin America and the Caribbean
+AU-01,AUS,MAI6,RIC6,SOY6,WHE6,AUS,AU,AS,Oceania,Australia and New Zealand
+AU-02,AUS,MAI6,RIC6,SOY6,WHE6,AUS,AU,AS,Oceania,Australia and New Zealand
+AU-03,AUS,MAI6,RIC6,SOY6,WHE6,AUS,AU,AS,Oceania,Australia and New Zealand
+AUS,AUS,MAI6,RIC6,SOY6,WHE6,AUS,AU,AS,Oceania,Australia and New Zealand
+AUT,AUT,MAI4,RIC6,SOY6,WHE1,AUT,AT,AU,Europe,Western Europe
+AU-WA,AUS,MAI6,RIC6,SOY6,WHE6,AUS,AU,AS,Oceania,Australia and New Zealand
+AZE,AZE,MAI6,RIC6,SOY6,WHE6,AZE,AZ,AJ,Asia,Western Asia
+BDI,BDI,MAI6,RIC6,SOY6,WHE6,BDI,BI,BY,Africa,Sub-Saharan Africa
+BEL,BEL,MAI4,RIC6,SOY6,WHE1,BEL,BE,S8,Europe,Western Europe
+BEN,BEN,MAI6,RIC6,SOY6,WHE6,BEN,BJ,DM,Africa,Sub-Saharan Africa
+BES,NLD,MAI4,RIC6,SOY6,WHE1,BES,BQ,NL,Americas,Latin America and the Caribbean
+BFA,BFA,MAI6,RIC6,SOY6,WHE6,BFA,BF,UV,Africa,Sub-Saharan Africa
+BGD,BGD,MAI6,RIC4,SOY6,WHE6,BGD,BD,BG,Asia,Southern Asia
+BGR,BGR,MAI4,RIC6,SOY6,WHE1,BGR,BG,BU,Europe,Eastern Europe
+BHR,BHR,MAI6,RIC6,SOY6,WHE6,BHR,BH,BA,Asia,Western Asia
+BHS,BHS,MAI6,RIC6,SOY6,WHE6,BHS,BS,BF,Americas,Latin America and the Caribbean
+BIH,BIH,MAI6,RIC6,SOY6,WHE6,BIH,BA,BK,Europe,Southern Europe
+BLM,FRA,MAI4,RIC6,SOY6,WHE1,BLM,BL,TB,Americas,Latin America and the Caribbean
+BLR,BLR,MAI6,RIC6,SOY6,WHE6,BLR,BY,BO,Europe,Eastern Europe
+BLZ,BLZ,MAI6,RIC6,SOY6,WHE6,BLZ,BZ,BH,Americas,Latin America and the Caribbean
+BMU,GBR,MAI6,RIC6,SOY6,WHE6,BMU,BM,BD,Americas,Northern America
+BOL,BOL,MAI6,RIC6,SOY6,WHE6,BOL,BO,BL,Americas,Latin America and the Caribbean
+BR-01,BRA,MAI3,RIC6,SOY1,WHE6,BRA,BR,BR,Americas,Latin America and the Caribbean
+BR-02,BRA,MAI3,RIC6,SOY1,WHE6,BRA,BR,BR,Americas,Latin America and the Caribbean
+BR-03,BRA,MAI3,RIC6,SOY1,WHE6,BRA,BR,BR,Americas,Latin America and the Caribbean
+BR-04,BRA,MAI3,RIC6,SOY1,WHE6,BRA,BR,BR,Americas,Latin America and the Caribbean
+BR-05,BRA,MAI3,RIC6,SOY1,WHE6,BRA,BR,BR,Americas,Latin America and the Caribbean
+BRA,BRA,MAI3,RIC6,SOY1,WHE6,BRA,BR,BR,Americas,Latin America and the Caribbean
+BRB,BRB,MAI6,RIC6,SOY6,WHE6,BRB,BB,BB,Americas,Latin America and the Caribbean
+BRN,BRN,MAI6,RIC6,SOY6,WHE6,BRN,BN,BX,Asia,South-eastern Asia
+BTN,BTN,MAI6,RIC6,SOY6,WHE6,BTN,BT,BT,Asia,Southern Asia
+BVT,NOR,MAI6,RIC6,SOY6,WHE6,BVT,BV,BV,Americas,Latin America and the Caribbean
+BWA,BWA,MAI6,RIC6,SOY6,WHE6,BWA,BW,BC,Africa,Sub-Saharan Africa
+CA-01,CAN,MAI6,RIC6,SOY6,WHE6,CAN,CA,CA,Americas,Northern America
+CA-02,CAN,MAI6,RIC6,SOY6,WHE6,CAN,CA,CA,Americas,Northern America
+CA-03,CAN,MAI6,RIC6,SOY6,WHE6,CAN,CA,CA,Americas,Northern America
+CA-BC,CAN,MAI6,RIC6,SOY6,WHE6,CAN,CA,CA,Americas,Northern America
+CAF,CAF,MAI6,RIC6,SOY6,WHE6,CAF,CF,CT,Africa,Sub-Saharan Africa
+CAN,CAN,MAI6,RIC6,SOY6,WHE6,CAN,CA,CA,Americas,Northern America
+CA-ON,CAN,MAI6,RIC6,SOY6,WHE6,CAN,CA,CA,Americas,Northern America
+CA-QC,CAN,MAI6,RIC6,SOY6,WHE6,CAN,CA,CA,Americas,Northern America
+CCK,AUS,MAI6,RIC6,SOY6,WHE6,CCK,CC,CK,Oceania,Australia and New Zealand
+CHE,CHE,MAI6,RIC6,SOY6,WHE6,CHE,CH,SZ,Europe,Western Europe
+CHL,CHL,MAI6,RIC6,SOY6,WHE6,CHL,CL,CI,Americas,Latin America and the Caribbean
+CHN,CHN,MAI2,RIC1,SOY4,WHE2,CHN,CN,CH,Asia,Eastern Asia
+CIV,CIV,MAI6,RIC6,SOY6,WHE6,CIV,CI,IV,Africa,Sub-Saharan Africa
+CMR,CMR,MAI6,RIC6,SOY6,WHE6,CMR,CM,CM,Africa,Sub-Saharan Africa
+CN-01,CHN,MAI2,RIC1,SOY4,WHE2,CHN,CN,CH,Asia,Eastern Asia
+CN-02,CHN,MAI2,RIC1,SOY4,WHE2,CHN,CN,CH,Asia,Eastern Asia
+CN-03,CHN,MAI2,RIC1,SOY4,WHE2,CHN,CN,CH,Asia,Eastern Asia
+CN-04,CHN,MAI2,RIC1,SOY4,WHE2,CHN,CN,CH,Asia,Eastern Asia
+CN-05,CHN,MAI2,RIC1,SOY4,WHE2,CHN,CN,CH,Asia,Eastern Asia
+CN-06,CHN,MAI2,RIC1,SOY4,WHE2,CHN,CN,CH,Asia,Eastern Asia
+COD,COD,MAI6,RIC6,SOY6,WHE6,COD,CD,CG,Africa,Sub-Saharan Africa
+COG,COG,MAI6,RIC6,SOY6,WHE6,COG,CG,CF,Africa,Sub-Saharan Africa
+COK,NZL,MAI6,RIC6,SOY6,WHE6,COK,CK,CW,Oceania,Polynesia
+COL,COL,MAI6,RIC6,SOY6,WHE6,COL,CO,CO,Americas,Latin America and the Caribbean
+COM,COM,MAI6,RIC6,SOY6,WHE6,COM,KM,CN,Africa,Sub-Saharan Africa
+CPV,CPV,MAI6,RIC6,SOY6,WHE6,CPV,CV,CV,Africa,Sub-Saharan Africa
+CRI,CRI,MAI6,RIC6,SOY6,WHE6,CRI,CR,CS,Americas,Latin America and the Caribbean
+CUB,CUB,MAI6,RIC6,SOY6,WHE6,CUB,CU,CU,Americas,Latin America and the Caribbean
+CUW,NLD,MAI4,RIC6,SOY6,WHE1,CUW,CW,UC,Americas,Latin America and the Caribbean
+CXR,AUS,MAI6,RIC6,SOY6,WHE6,CXR,CX,KT,Oceania,Australia and New Zealand
+CYM,GBR,MAI6,RIC6,SOY6,WHE6,CYM,KY,CJ,Americas,Latin America and the Caribbean
+CYP,CYP,MAI4,RIC6,SOY6,WHE1,CYP,CY,CY,Asia,Western Asia
+CZE,CZE,MAI4,RIC6,SOY6,WHE1,CZE,CZ,EZ,Europe,Eastern Europe
+DEU,DEU,MAI4,RIC6,SOY6,WHE1,DEU,DE,GM,Europe,Western Europe
+DJI,DJI,MAI6,RIC6,SOY6,WHE6,DJI,DJ,DJ,Africa,Sub-Saharan Africa
+DMA,DMA,MAI6,RIC6,SOY6,WHE6,DMA,DM,DO,Americas,Latin America and the Caribbean
+DNK,DNK,MAI4,RIC6,SOY6,WHE1,DNK,DK,DA,Europe,Northern Europe
+DOM,DOM,MAI6,RIC6,SOY6,WHE6,DOM,DO,DR,Americas,Latin America and the Caribbean
+DZA,DZA,MAI6,RIC6,SOY6,WHE6,DZA,DZ,AG,Africa,Northern Africa
+ECU,ECU,MAI6,RIC6,SOY6,WHE6,ECU,EC,EC,Americas,Latin America and the Caribbean
+EGY,EGY,MAI6,RIC6,SOY6,WHE6,EGY,EG,EG,Africa,Northern Africa
+ERI,ERI,MAI6,RIC6,SOY6,WHE6,ERI,ER,ER,Africa,Sub-Saharan Africa
+ESH,XXX,MAI6,RIC6,SOY6,WHE6,ESH,EH,WI,Africa,Northern Africa
+ESP,ESP,MAI4,RIC6,SOY6,WHE1,ESP,ES,SP,Europe,Southern Europe
+EST,EST,MAI4,RIC6,SOY6,WHE1,EST,EE,EN,Europe,Northern Europe
+ETH,ETH,MAI6,RIC6,SOY6,WHE6,ETH,ET,ET,Africa,Sub-Saharan Africa
+FIN,FIN,MAI4,RIC6,SOY6,WHE1,FIN,FI,FI,Europe,Northern Europe
+FJI,FJI,MAI6,RIC6,SOY6,WHE6,FJI,FJ,FJ,Oceania,Melanesia
+FLK,XXX,MAI6,RIC6,SOY6,WHE6,FLK,FK,FA,Americas,Latin America and the Caribbean
+FRA,FRA,MAI4,RIC6,SOY6,WHE1,FRA,FR,FR,Europe,Western Europe
+FRO,DNK,MAI4,RIC6,SOY6,WHE1,FRO,FO,FO,Europe,Northern Europe
+FSM,FSM,MAI6,RIC6,SOY6,WHE6,FSM,FM,FM,Oceania,Micronesia
+GAB,GAB,MAI6,RIC6,SOY6,WHE6,GAB,GA,GB,Africa,Sub-Saharan Africa
+GBR,GBR,MAI6,RIC6,SOY6,WHE6,GBR,GB,UK,Europe,Northern Europe
+GEO,GEO,MAI6,RIC6,SOY6,WHE6,GEO,GE,GG,Asia,Western Asia
+GGY,GBR,MAI6,RIC6,SOY6,WHE6,GGY,GG,GK,Europe,Northern Europe
+GHA,GHA,MAI6,RIC6,SOY6,WHE6,GHA,GH,GH,Africa,Sub-Saharan Africa
+GIB,GBR,MAI6,RIC6,SOY6,WHE6,GIB,GI,GI,Europe,Southern Europe
+GIN,GIN,MAI6,RIC6,SOY6,WHE6,GIN,GN,GU,Africa,Sub-Saharan Africa
+GLP,FRA,MAI4,RIC6,SOY6,WHE1,GLP,GP,GP,Americas,Latin America and the Caribbean
+GMB,GMB,MAI6,RIC6,SOY6,WHE6,GMB,GM,GA,Africa,Sub-Saharan Africa
+GNB,GNB,MAI6,RIC6,SOY6,WHE6,GNB,GW,PU,Africa,Sub-Saharan Africa
+GNQ,GNQ,MAI6,RIC6,SOY6,WHE6,GNQ,GQ,EK,Africa,Sub-Saharan Africa
+GRC,GRC,MAI4,RIC6,SOY6,WHE1,GRC,GR,GR,Europe,Southern Europe
+GRD,GRD,MAI6,RIC6,SOY6,WHE6,GRD,GD,GJ,Americas,Latin America and the Caribbean
+GRL,DNK,MAI4,RIC6,SOY6,WHE1,GRL,GL,GL,Americas,Northern America
+GTM,GTM,MAI6,RIC6,SOY6,WHE6,GTM,GT,GT,Americas,Latin America and the Caribbean
+GUF,FRA,MAI4,RIC6,SOY6,WHE1,GUF,GF,FG,Americas,Latin America and the Caribbean
+GUM,USA,MAI1,RIC6,SOY2,WHE5,GUM,GU,GQ,Oceania,Micronesia
+GUY,GUY,MAI6,RIC6,SOY6,WHE6,GUY,GY,GY,Americas,Latin America and the Caribbean
+HKG,CHN,MAI2,RIC1,SOY4,WHE2,HKG,HK,HK,Asia,Eastern Asia
+HMD,AUS,MAI6,RIC6,SOY6,WHE6,HMD,HM,HM,Oceania,Australia and New Zealand
+HND,HND,MAI6,RIC6,SOY6,WHE6,HND,HN,HO,Americas,Latin America and the Caribbean
+HRV,HRV,MAI4,RIC6,SOY6,WHE1,HRV,HR,HR,Europe,Southern Europe
+HTI,HTI,MAI6,RIC6,SOY6,WHE6,HTI,HT,HA,Americas,Latin America and the Caribbean
+HUN,HUN,MAI4,RIC6,SOY6,WHE1,HUN,HU,HU,Europe,Eastern Europe
+IDN,IDN,MAI6,RIC3,SOY6,WHE6,IDN,ID,ID,Asia,South-eastern Asia
+IMN,GBR,MAI6,RIC6,SOY6,WHE6,IMN,IM,IMN,Europe,Northern Europe
+IND,IND,MAI6,RIC2,SOY5,WHE3,IND,IN,IN,Asia,Southern Asia
+IOT,GBR,MAI6,RIC6,SOY6,WHE6,IOT,IO,IO,Africa,Sub-Saharan Africa
+IRL,IRL,MAI4,RIC6,SOY6,WHE1,IRL,IE,EI,Europe,Northern Europe
+IRN,IRN,MAI6,RIC6,SOY6,WHE6,IRN,IR,IR,Asia,Southern Asia
+IRQ,IRQ,MAI6,RIC6,SOY6,WHE6,IRQ,IQ,IZ,Asia,Western Asia
+ISL,ISL,MAI6,RIC6,SOY6,WHE6,ISL,IS,IC,Europe,Northern Europe
+ISR,ISR,MAI6,RIC6,SOY6,WHE6,ISR,IL,IS,Asia,Western Asia
+ITA,ITA,MAI4,RIC6,SOY6,WHE1,ITA,IT,IT,Europe,Southern Europe
+JAM,JAM,MAI6,RIC6,SOY6,WHE6,JAM,JM,JM,Americas,Latin America and the Caribbean
+JEY,GBR,MAI6,RIC6,SOY6,WHE6,JEY,JE,JE,Europe,Northern Europe
+JOR,JOR,MAI6,RIC6,SOY6,WHE6,JOR,JO,JO,Asia,Western Asia
+JPN,JPN,MAI6,RIC6,SOY6,WHE6,JPN,JP,JA,Asia,Eastern Asia
+KAZ,KAZ,MAI6,RIC6,SOY6,WHE6,KAZ,KZ,KZ,Asia,Central Asia
+KEN,KEN,MAI6,RIC6,SOY6,WHE6,KEN,KE,KE,Africa,Sub-Saharan Africa
+KGZ,KGZ,MAI6,RIC6,SOY6,WHE6,KGZ,KG,KG,Asia,Central Asia
+KHM,KHM,MAI6,RIC6,SOY6,WHE6,KHM,KH,CB,Asia,South-eastern Asia
+KIR,KIR,MAI6,RIC6,SOY6,WHE6,KIR,KI,KI,Oceania,Micronesia
+KNA,KNA,MAI6,RIC6,SOY6,WHE6,KNA,KN,SC,Americas,Latin America and the Caribbean
+KOR,KOR,MAI6,RIC6,SOY6,WHE6,KOR,KR,KS,Asia,Eastern Asia
+KWT,KWT,MAI6,RIC6,SOY6,WHE6,KWT,KW,KU,Asia,Western Asia
+LAO,LAO,MAI6,RIC6,SOY6,WHE6,LAO,LA,LA,Asia,South-eastern Asia
+LBN,LBN,MAI6,RIC6,SOY6,WHE6,LBN,LB,LE,Asia,Western Asia
+LBR,LBR,MAI6,RIC6,SOY6,WHE6,LBR,LR,LI,Africa,Sub-Saharan Africa
+LBY,LBY,MAI6,RIC6,SOY6,WHE6,LBY,LY,LY,Africa,Northern Africa
+LCA,LCA,MAI6,RIC6,SOY6,WHE6,LCA,LC,ST,Americas,Latin America and the Caribbean
+LIE,LIE,MAI6,RIC6,SOY6,WHE6,LIE,LI,LS,Europe,Western Europe
+LKA,LKA,MAI6,RIC6,SOY6,WHE6,LKA,LK,CE,Asia,Southern Asia
+LSO,LSO,MAI6,RIC6,SOY6,WHE6,LSO,LS,LT,Africa,Sub-Saharan Africa
+LTU,LTU,MAI4,RIC6,SOY6,WHE1,LTU,LT,LH,Europe,Northern Europe
+LUX,LUX,MAI4,RIC6,SOY6,WHE1,LUX,LU,LU,Europe,Western Europe
+LVA,LVA,MAI4,RIC6,SOY6,WHE1,LVA,LV,LG,Europe,Northern Europe
+MAC,CHN,MAI2,RIC1,SOY4,WHE2,MAC,MO,MC,Asia,Eastern Asia
+MAF,FRA,MAI4,RIC6,SOY6,WHE1,MAF,MF,RN,Americas,Latin America and the Caribbean
+MAR,MAR,MAI6,RIC6,SOY6,WHE6,MAR,MA,MO,Africa,Northern Africa
+MCO,MCO,MAI6,RIC6,SOY6,WHE6,MCO,MC,MN,Europe,Western Europe
+MDA,MDA,MAI6,RIC6,SOY6,WHE6,MDA,MD,MD,Europe,Eastern Europe
+MDG,MDG,MAI6,RIC6,SOY6,WHE6,MDG,MG,MA,Africa,Sub-Saharan Africa
+MDV,MDV,MAI6,RIC6,SOY6,WHE6,MDV,MV,MV,Asia,Southern Asia
+MEX,MEX,MAI6,RIC6,SOY6,WHE6,MEX,MX,MX,Americas,Latin America and the Caribbean
+MHL,MHL,MAI6,RIC6,SOY6,WHE6,MHL,MH,RM,Oceania,Micronesia
+MKD,MKD,MAI6,RIC6,SOY6,WHE6,MKD,MK,MK,Europe,Southern Europe
+MLI,MLI,MAI6,RIC6,SOY6,WHE6,MLI,ML,ML,Africa,Sub-Saharan Africa
+MLT,MLT,MAI4,RIC6,SOY6,WHE1,MLT,MT,MT,Europe,Southern Europe
+MMR,MMR,MAI6,RIC6,SOY6,WHE6,MMR,MM,BM,Asia,South-eastern Asia
+MNE,MNE,MAI6,RIC6,SOY6,WHE6,MNE,ME,MJ,Europe,Southern Europe
+MNG,MNG,MAI6,RIC6,SOY6,WHE6,MNG,MN,MG,Asia,Eastern Asia
+MNP,USA,MAI1,RIC6,SOY2,WHE5,MNP,MP,CQ,Oceania,Micronesia
+MOZ,MOZ,MAI6,RIC6,SOY6,WHE6,MOZ,MZ,MZ,Africa,Sub-Saharan Africa
+MRT,MRT,MAI6,RIC6,SOY6,WHE6,MRT,MR,MR,Africa,Sub-Saharan Africa
+MSR,GBR,MAI6,RIC6,SOY6,WHE6,MSR,MS,MH,Americas,Latin America and the Caribbean
+MTQ,FRA,MAI4,RIC6,SOY6,WHE1,MTQ,MQ,MB,Americas,Latin America and the Caribbean
+MUS,MUS,MAI6,RIC6,SOY6,WHE6,MUS,MU,MP,Africa,Sub-Saharan Africa
+MWI,MWI,MAI6,RIC6,SOY6,WHE6,MWI,MW,MI,Africa,Sub-Saharan Africa
+MYS,MYS,MAI6,RIC6,SOY6,WHE6,MYS,MY,MY,Asia,South-eastern Asia
+MYT,FRA,MAI4,RIC6,SOY6,WHE1,MYT,YT,MF,Africa,Sub-Saharan Africa
+NAM,NAM,MAI6,RIC6,SOY6,WHE6,NAM,NA,WA,Africa,Sub-Saharan Africa
+NCL,FRA,MAI4,RIC6,SOY6,WHE1,NCL,NC,NC,Oceania,Melanesia
+NER,NER,MAI6,RIC6,SOY6,WHE6,NER,NE,NG,Africa,Sub-Saharan Africa
+NFK,AUS,MAI6,RIC6,SOY6,WHE6,NFK,NF,NF,Oceania,Australia and New Zealand
+NGA,NGA,MAI6,RIC6,SOY6,WHE6,NGA,NG,NI,Africa,Sub-Saharan Africa
+NIC,NIC,MAI6,RIC6,SOY6,WHE6,NIC,NI,NU,Americas,Latin America and the Caribbean
+NIU,NZL,MAI6,RIC6,SOY6,WHE6,NIU,NU,NE,Oceania,Polynesia
+NLD,NLD,MAI4,RIC6,SOY6,WHE1,NLD,NL,NL,Europe,Western Europe
+NOR,NOR,MAI6,RIC6,SOY6,WHE6,NOR,NO,NO,Europe,Northern Europe
+NPL,NPL,MAI6,RIC6,SOY6,WHE6,NPL,NP,NP,Asia,Southern Asia
+NRU,NRU,MAI6,RIC6,SOY6,WHE6,NRU,NR,NR,Oceania,Micronesia
+NZL,NZL,MAI6,RIC6,SOY6,WHE6,NZL,NZ,NZ,Oceania,Australia and New Zealand
+OMN,OMN,MAI6,RIC6,SOY6,WHE6,OMN,OM,MU,Asia,Western Asia
+PAK,PAK,MAI6,RIC6,SOY6,WHE6,PAK,PK,PK,Asia,Southern Asia
+PAN,PAN,MAI6,RIC6,SOY6,WHE6,PAN,PA,PN,Americas,Latin America and the Caribbean
+PCN,GBR,MAI6,RIC6,SOY6,WHE6,PCN,PN,PC,Oceania,Polynesia
+PER,PER,MAI6,RIC6,SOY6,WHE6,PER,PE,PE,Americas,Latin America and the Caribbean
+PHL,PHL,MAI6,RIC6,SOY6,WHE6,PHL,PH,RP,Asia,South-eastern Asia
+PLW,PLW,MAI6,RIC6,SOY6,WHE6,PLW,PW,PS,Oceania,Micronesia
+PNG,PNG,MAI6,RIC6,SOY6,WHE6,PNG,PG,PP,Oceania,Melanesia
+POL,POL,MAI4,RIC6,SOY6,WHE1,POL,PL,PL,Europe,Eastern Europe
+PRI,USA,MAI1,RIC6,SOY2,WHE5,PRI,PR,RQ,Americas,Latin America and the Caribbean
+PRK,PRK,MAI6,RIC6,SOY6,WHE6,PRK,KP,KN,Asia,Eastern Asia
+PRT,PRT,MAI4,RIC6,SOY6,WHE1,PRT,PT,PO,Europe,Southern Europe
+PRY,PRY,MAI6,RIC6,SOY6,WHE6,PRY,PY,PA,Americas,Latin America and the Caribbean
+PSE,PSE,MAI6,RIC6,SOY6,WHE6,PSE,PS,XX,Asia,Western Asia
+PYF,FRA,MAI4,RIC6,SOY6,WHE1,PYF,PF,FP,Oceania,Polynesia
+QAT,QAT,MAI6,RIC6,SOY6,WHE6,QAT,QA,QA,Asia,Western Asia
+REU,FRA,MAI4,RIC6,SOY6,WHE1,REU,RE,RE,Africa,Sub-Saharan Africa
+ROU,ROU,MAI4,RIC6,SOY6,WHE1,ROU,RO,RO,Europe,Eastern Europe
+RU-01,RUS,MAI6,RIC6,SOY6,WHE4,RUS,RU,RS,Europe,Eastern Europe
+RU-02,RUS,MAI6,RIC6,SOY6,WHE4,RUS,RU,RS,Europe,Eastern Europe
+RU-03,RUS,MAI6,RIC6,SOY6,WHE4,RUS,RU,RS,Europe,Eastern Europe
+RU-04,RUS,MAI6,RIC6,SOY6,WHE4,RUS,RU,RS,Europe,Eastern Europe
+RU-05,RUS,MAI6,RIC6,SOY6,WHE4,RUS,RU,RS,Europe,Eastern Europe
+RU-06,RUS,MAI6,RIC6,SOY6,WHE4,RUS,RU,RS,Europe,Eastern Europe
+RU-07,RUS,MAI6,RIC6,SOY6,WHE4,RUS,RU,RS,Europe,Eastern Europe
+RU-08,RUS,MAI6,RIC6,SOY6,WHE4,RUS,RU,RS,Europe,Eastern Europe
+RU-KG,RUS,MAI6,RIC6,SOY6,WHE4,RUS,RU,RS,Europe,Eastern Europe
+RUS,RUS,MAI6,RIC6,SOY6,WHE4,RUS,RU,RS,Europe,Eastern Europe
+RWA,RWA,MAI6,RIC6,SOY6,WHE6,RWA,RW,RW,Africa,Sub-Saharan Africa
+SAU,SAU,MAI6,RIC6,SOY6,WHE6,SAU,SA,SA,Asia,Western Asia
+SDN,SDN,MAI6,RIC6,SOY6,WHE6,SDN,SD,SU,Africa,Northern Africa
+SEN,SEN,MAI6,RIC6,SOY6,WHE6,SEN,SN,SG,Africa,Sub-Saharan Africa
+SGP,SGP,MAI6,RIC6,SOY6,WHE6,SGP,SG,SN,Asia,South-eastern Asia
+SGS,GBR,MAI6,RIC6,SOY6,WHE6,SGS,GS,SX,Americas,Latin America and the Caribbean
+SHN,GBR,MAI6,RIC6,SOY6,WHE6,SHN,SH,SH,Africa,Sub-Saharan Africa
+SJM,NOR,MAI6,RIC6,SOY6,WHE6,SJM,SJ,SV,Europe,Northern Europe
+SLB,SLB,MAI6,RIC6,SOY6,WHE6,SLB,SB,BP,Oceania,Melanesia
+SLE,SLE,MAI6,RIC6,SOY6,WHE6,SLE,SL,SL,Africa,Sub-Saharan Africa
+SLV,SLV,MAI6,RIC6,SOY6,WHE6,SLV,SV,ES,Americas,Latin America and the Caribbean
+SMR,SMR,MAI6,RIC6,SOY6,WHE6,SMR,SM,SM,Europe,Southern Europe
+SOM,SOM,MAI6,RIC6,SOY6,WHE6,SOM,SO,SO,Africa,Sub-Saharan Africa
+SPM,FRA,MAI4,RIC6,SOY6,WHE1,SPM,PM,SB,Americas,Northern America
+SRB,SRB,MAI6,RIC6,SOY6,WHE6,SRB,RS,RB,Europe,Southern Europe
+SSD,SSD,MAI6,RIC6,SOY6,WHE6,SSD,SS,OD,Africa,Sub-Saharan Africa
+STP,STP,MAI6,RIC6,SOY6,WHE6,STP,ST,TP,Africa,Sub-Saharan Africa
+SUR,SUR,MAI6,RIC6,SOY6,WHE6,SUR,SR,NS,Americas,Latin America and the Caribbean
+SVK,SVK,MAI4,RIC6,SOY6,WHE1,SVK,SK,LO,Europe,Eastern Europe
+SVN,SVN,MAI4,RIC6,SOY6,WHE1,SVN,SI,SI,Europe,Southern Europe
+SWE,SWE,MAI4,RIC6,SOY6,WHE1,SWE,SE,SW,Europe,Northern Europe
+SWZ,SWZ,MAI6,RIC6,SOY6,WHE6,SWZ,SZ,WZ,Africa,Sub-Saharan Africa
+SXM,NLD,MAI4,RIC6,SOY6,WHE1,SXM,SX,NN,Americas,Latin America and the Caribbean
+SYC,SYC,MAI6,RIC6,SOY6,WHE6,SYC,SC,SE,Africa,Sub-Saharan Africa
+SYR,SYR,MAI6,RIC6,SOY6,WHE6,SYR,SY,SY,Asia,Western Asia
+TCA,GBR,MAI6,RIC6,SOY6,WHE6,TCA,TC,TK,Americas,Latin America and the Caribbean
+TCD,TCD,MAI6,RIC6,SOY6,WHE6,TCD,TD,CD,Africa,Sub-Saharan Africa
+TGO,TGO,MAI6,RIC6,SOY6,WHE6,TGO,TG,TO,Africa,Sub-Saharan Africa
+THA,THA,MAI6,RIC6,SOY6,WHE6,THA,TH,TH,Asia,South-eastern Asia
+TJK,TJK,MAI6,RIC6,SOY6,WHE6,TJK,TJ,TI,Asia,Central Asia
+TKL,NZL,MAI6,RIC6,SOY6,WHE6,TKL,TK,TL,Oceania,Polynesia
+TKM,TKM,MAI6,RIC6,SOY6,WHE6,TKM,TM,TX,Asia,Central Asia
+TLS,TLS,MAI6,RIC6,SOY6,WHE6,TLS,TL,TT,Asia,South-eastern Asia
+TON,TON,MAI6,RIC6,SOY6,WHE6,TON,TO,TN,Oceania,Polynesia
+TTO,TTO,MAI6,RIC6,SOY6,WHE6,TTO,TT,TD,Americas,Latin America and the Caribbean
+TUN,TUN,MAI6,RIC6,SOY6,WHE6,TUN,TN,TS,Africa,Northern Africa
+TUR,TUR,MAI6,RIC6,SOY6,WHE6,TUR,TR,TU,Asia,Western Asia
+TUV,TUV,MAI6,RIC6,SOY6,WHE6,TUV,TV,TV,Oceania,Polynesia
+TWN,CHN,MAI2,RIC1,SOY4,WHE2,TWN,TW,TW,Asia,Eastern Asia
+TZA,TZA,MAI6,RIC6,SOY6,WHE6,TZA,TZ,TZ,Africa,Sub-Saharan Africa
+UGA,UGA,MAI6,RIC6,SOY6,WHE6,UGA,UG,UG,Africa,Sub-Saharan Africa
+UKR,UKR,MAI6,RIC6,SOY6,WHE6,UKR,UA,UP,Europe,Eastern Europe
+UMI,USA,MAI1,RIC6,SOY2,WHE5,UMI,UM,UM,Oceania,Micronesia
+URY,URY,MAI6,RIC6,SOY6,WHE6,URY,UY,UY,Americas,Latin America and the Caribbean
+US-01,USA,MAI1,RIC6,SOY2,WHE5,USA,US,US,Americas,Northern America
+US-02,USA,MAI1,RIC6,SOY2,WHE5,USA,US,US,Americas,Northern America
+US-03,USA,MAI1,RIC6,SOY2,WHE5,USA,US,US,Americas,Northern America
+US-04,USA,MAI1,RIC6,SOY2,WHE5,USA,US,US,Americas,Northern America
+US-05,USA,MAI1,RIC6,SOY2,WHE5,USA,US,US,Americas,Northern America
+US-06,USA,MAI1,RIC6,SOY2,WHE5,USA,US,US,Americas,Northern America
+US-07,USA,MAI1,RIC6,SOY2,WHE5,USA,US,US,Americas,Northern America
+US-08,USA,MAI1,RIC6,SOY2,WHE5,USA,US,US,Americas,Northern America
+US-09,USA,MAI1,RIC6,SOY2,WHE5,USA,US,US,Americas,Northern America
+USA,USA,MAI1,RIC6,SOY2,WHE5,USA,US,US,Americas,Northern America
+US-AK,USA,MAI1,RIC6,SOY2,WHE5,USA,US,US,Americas,Northern America
+US-HI,USA,MAI1,RIC6,SOY2,WHE5,USA,US,US,Americas,Northern America
+UZB,UZB,MAI6,RIC6,SOY6,WHE6,UZB,UZ,UZ,Asia,Central Asia
+VAT,VAT,MAI6,RIC6,SOY6,WHE6,VAT,VA,VT,Europe,Southern Europe
+VCT,VCT,MAI6,RIC6,SOY6,WHE6,VCT,VC,VC,Americas,Latin America and the Caribbean
+VEN,VEN,MAI6,RIC6,SOY6,WHE6,VEN,VE,VE,Americas,Latin America and the Caribbean
+VGB,GBR,MAI6,RIC6,SOY6,WHE6,VGB,VG,VI,Americas,Latin America and the Caribbean
+VIR,USA,MAI1,RIC6,SOY2,WHE5,VIR,VI,VO,Americas,Latin America and the Caribbean
+VNM,VNM,MAI6,RIC5,SOY6,WHE6,VNM,VN,VM,Asia,South-eastern Asia
+VUT,VUT,MAI6,RIC6,SOY6,WHE6,VUT,VU,NH,Oceania,Melanesia
+WLF,FRA,MAI4,RIC6,SOY6,WHE1,WLF,WF,WF,Oceania,Polynesia
+WSM,WSM,MAI6,RIC6,SOY6,WHE6,WSM,WS,WS,Oceania,Polynesia
+XAB,XXX,MAI6,RIC6,SOY6,WHE6,XAB,XX,XX,Africa,
+XAC,CHN,MAI2,RIC1,SOY4,WHE2,CHN,CN,CH,Asia,Eastern Asia
+XAD,GBR,MAI6,RIC6,SOY6,WHE6,GBR,GB,UK,Europe,Northern Europe
+XAL,XXX,MAI6,RIC6,SOY6,WHE6,XXX,XX,XX,Others,
+XAP,CHN,MAI2,RIC1,SOY4,WHE2,CHN,CN,CH,Asia,Eastern Asia
+XBT,XXX,MAI6,RIC6,SOY6,WHE6,XXX,XX,XX,Africa,
+XCI,FRA,MAI4,RIC6,SOY6,WHE1,CPT,CP,IP,Oceania,
+XCS,XXX,MAI6,RIC6,SOY6,WHE6,XXX,XX,XX,Others,
+XGK,XXX,MAI6,RIC6,SOY6,WHE6,XXX,XX,XX,Asia,
+XGL,XXX,MAI6,RIC6,SOY6,WHE6,XXX,XX,XX,Americas,
+XHT,XXX,MAI6,RIC6,SOY6,WHE6,XXX,XX,XX,Africa,
+XHV,CHN,MAI2,RIC1,SOY4,WHE2,CHN,CN,CH,Asia,Eastern Asia
+XIT,XXX,MAI6,RIC6,SOY6,WHE6,XXX,XX,XX,Africa,
+XKI,XXX,MAI6,RIC6,SOY6,WHE6,XXX,XX,PJ,Asia,
+XKO,SRB,MAI6,RIC6,SOY6,WHE6,XKX,XK,KV,Europe,
+XPI,CHN,MAI2,RIC1,SOY4,WHE2,CHN,CN,CH,Asia,Eastern Asia
+XSC,XXX,MAI6,RIC6,SOY6,WHE6,XXX,XX,XX,Africa,
+XSI,CHN,MAI2,RIC1,SOY4,WHE2,CHN,CN,CH,Asia,Eastern Asia
+XSK,CHN,MAI2,RIC1,SOY4,WHE2,CHN,CN,CH,Asia,Eastern Asia
+XSS,CHN,MAI2,RIC1,SOY4,WHE2,CHN,CN,CH,Asia,Eastern Asia
+YEM,YEM,MAI6,RIC6,SOY6,WHE6,YEM,YE,YM,Asia,Western Asia
+ZAF,ZAF,MAI6,RIC6,SOY6,WHE6,ZAF,ZA,SF,Africa,Sub-Saharan Africa
+ZMB,ZMB,MAI6,RIC6,SOY6,WHE6,ZMB,ZM,ZA,Africa,Sub-Saharan Africa
+ZWE,ZWE,MAI6,RIC6,SOY6,WHE6,ZWE,ZW,RH,Africa,Sub-Saharan Africa

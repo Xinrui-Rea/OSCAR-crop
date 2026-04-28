@@ -1,8 +1,6 @@
 **/__pycache__/
 ./settings.json
 
-input_data/
-
 results/
 
 run_script/
