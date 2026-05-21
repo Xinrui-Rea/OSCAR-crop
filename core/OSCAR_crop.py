@@ -10,7 +10,7 @@ CROP EMULATOR
     1.2. TEMPERATURE
     1.3. PRECIPITATION
     1.4. FERTILIZER
-    1.5. YIELD
+    1.5. CROP YIELD
 2. ABOVEGROUND BIOMASS
 
 """
@@ -22,7 +22,7 @@ import numpy as np
 import xarray as xr
 
 ##################################################
-##   CROP EMULATOR
+##   FOOD CROP
 ##################################################
 ## initialize
 def CROP(option='offline', use_MIT=True, use_Geo=False, use_2nd=False, use_MM=False, **useless):

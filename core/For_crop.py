@@ -33,7 +33,7 @@ from core.utils_crop import convert_crop_land, aggreg_region
 ##################################################
 
 ## historical nitrogen fertilizer input
-def load_Nfertl_hist(datasets=['ISIMIP3b-5crops', 'LUH2-v2h', 'LUH3', 'Jagermeyr_2021', 'Adalibieke_2023'],
+def load_Nfertl_hist(datasets=['ISIMIP3b-5crops', 'LUH2', 'LUH3', 'Jagermeyr_2021', 'Adalibieke_2023'],
     crop_species=['mai', 'ri1', 'ri2', 'soy', 'swh', 'wwh'],
     mod_region='sub-national',
     **useless):
@@ -126,9 +126,9 @@ def load_Nfertl_hist(datasets=['ISIMIP3b-5crops', 'LUH2-v2h', 'LUH3', 'Jagermeyr
             For1 = For1['N_fertl']
         
         ## sub-national dataset
-        if data in ['LUH2-v2h']:
+        if data in ['LUH2']:
         ## three scenarios: historical, historical-high, historical-low
-            For1 = For1.sel(year=slice(1850, None))
+            For1 = For1.sel(year=slice(1850, 2014), scen=['historical', 'historical-high', 'historical-low'])
             for spc in crop_species:
                 for typ, spcs in crop_type.items():
                     if spc in spcs:
@@ -148,7 +148,7 @@ def load_Nfertl_hist(datasets=['ISIMIP3b-5crops', 'LUH2-v2h', 'LUH3', 'Jagermeyr
             For1 = For1['N_fertl']
 
         ## append to final list (with new dimension)
-        if data in ['LUH2-v2h']:
+        if data in ['LUH2']:
             For0.append(For1.assign_coords(data=['LUH2-'+val for val in For1.coords['data'].astype(str).to_numpy()]))
         else:
             For0.append(For1.expand_dims('data', -1).assign_coords(data=[data]))
@@ -340,11 +340,8 @@ def load_Nfertl_scen(datasets=['Jagermeyr_2021', 'ISIMIP3b-5crops'],
             For1 = For1['N_fertl'].to_dataset().rename({'soc':'scen'})
             For1['scen'] = [data+ '-' + val for val in For1['scen'].values]
     
-        if data in ['LUH2-v2f']:
-            For1 = For1.stack(new_scen=('climate', 'model'))
-            For1 = For1.reset_index('new_scen')
-            For1['new_scen'] = [var1+'_'+var2 for var1, var2 in zip(For1.climate.values, For1.model.values)]
-            For1 = For1.dropna('new_scen', 'all').rename({'new_scen':'scen'})
+        if data in ['LUH2']:
+            For1 = For1.dro_sel(year=slice(2015, None), scen=['historical', 'historical-high', 'historical-low'])
             for spc in crop_species:
                 for typ, spcs in crop_type.items():
                     if spc in spcs:

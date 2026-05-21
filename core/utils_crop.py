@@ -1009,7 +1009,8 @@ def aggreg_grid(ds_in, mask,
     if weight_output:
         ds_out[weight_var] = wgt.sum('cell')
         ds_out[weight_var] = ds_out[weight_var].assign_attrs({'units': 'km^2'})
-        ds_out[weight_var+'_g'] = weight_g
+        if calc_global:
+            ds_out[weight_var+'_g'] = weight_g
         if debug: print(f'Output weight variable "{weight_var}" shape: {ds_out[weight_var].shape}, dims: {ds_out[weight_var].dims}')
 
     ## add mask information for OSCAR regional aggregation
