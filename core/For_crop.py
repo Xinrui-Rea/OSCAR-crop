@@ -27,6 +27,8 @@ import xarray as xr
 from core.paths import path_data
 from core.utils_crop import convert_crop_land, aggreg_region
 
+## crop type
+crop_type = {'c3ann':['ri1', 'ri2', 'ric', 'swh', 'wwh', 'whe'], 'c3nfx':['soy'], 'c4ann':['mai']}
 
 ##################################################
 ##   1. NITROGEN
@@ -54,9 +56,6 @@ def load_Nfertl_hist(datasets=['ISIMIP3b-5crops', 'LUH2', 'LUH3', 'Jagermeyr_202
     crop_species (list)         crop species to be included
     '''
     
-    ## crop type
-    crop_type = {'c3ann':['ri1', 'ri2', 'ric', 'swh', 'wwh', 'whe'], 'c3nfx':['soy'], 'c4ann':['mai'], 'c3per': ['euc', 'pop'], 'c4per': ['mis']}
-        
     ## main loading loop
     For0 = []
     units = {}
@@ -139,17 +138,16 @@ def load_Nfertl_hist(datasets=['ISIMIP3b-5crops', 'LUH2', 'LUH3', 'Jagermeyr_202
         ## sub-national dataset
         ## all data after 2014 are the same for each region
         if data in ['LUH3']:
-            For1 = For1.sel(year=slice(1850, None))
+            For1 = For1.sel(scen='historical', year=slice(1850, 2024), drop=True)
             for spc in crop_species:
                 for typ, spcs in crop_type.items():
                     if spc in spcs:
                         For = For1['fertl_'+typ].expand_dims('spc_crop', -1).assign_coords(spc_crop=[spc]).rename('N_fertl')
                         For1 = For1.combine_first(For.to_dataset())
-            For1 = For1['N_fertl']
 
         ## append to final list (with new dimension)
         if data in ['LUH2']:
-            For0.append(For1.assign_coords(data=['LUH2-'+val for val in For1.coords['data'].astype(str).to_numpy()]))
+            For0.append(For1.assign_coords(data=[data+'-'+val for val in For1.coords['data'].astype(str).to_numpy()]))
         else:
             For0.append(For1.expand_dims('data', -1).assign_coords(data=[data]))
         del For1
@@ -262,7 +260,7 @@ def load_Ndep_hist(datasets=['ISIMIP3b'],
 
 
 ## scenarios for nitrogen fertilizer input
-def load_Nfertl_scen(datasets=['Jagermeyr_2021', 'ISIMIP3b-5crops'],
+def load_Nfertl_scen(datasets=['Jagermeyr_2021', 'ISIMIP3b-5crops', 'LUH2', 'LUH3'],
     crop_species=['mai', 'ri1', 'ri2', 'soy', 'swh', 'wwh'],
     mod_region='sub-national',
     **useless):
@@ -282,9 +280,6 @@ def load_Nfertl_scen(datasets=['Jagermeyr_2021', 'ISIMIP3b-5crops'],
                                 default = ['Jagermeyr_2021', 'ISIMIP3b-5crops']
     crop_species (list)         crop species to be included
     '''
-
-    ## crop type
-    crop_type = {'c3ann':['ri1', 'ri2', 'ric', 'swh', 'wwh', 'whe'], 'c3nfx':['soy'], 'c4ann':['mai']}
         
     ## main loading loop
     For0 = []
@@ -338,16 +333,27 @@ def load_Nfertl_scen(datasets=['Jagermeyr_2021', 'ISIMIP3b-5crops'],
                         For = For1['fertl_'+typ].expand_dims('spc_crop', -1).assign_coords(spc_crop=[spc]).rename('N_fertl')
                         For1 = For1.combine_first(For.to_dataset())
             For1 = For1['N_fertl'].to_dataset().rename({'soc':'scen'})
-            For1['scen'] = [data+ '-' + val for val in For1['scen'].values]
+            For1.coords['scen'] = [data+ '-' + val for val in For1['scen'].values]
     
         if data in ['LUH2']:
-            For1 = For1.dro_sel(year=slice(2015, None), scen=['historical', 'historical-high', 'historical-low'])
+            For1 = For1.sel(year=slice(2015, None)).drop_sel(scen=['historical', 'historical-high', 'historical-low'])
             for spc in crop_species:
                 for typ, spcs in crop_type.items():
                     if spc in spcs:
                         For = For1['fertl_'+typ].expand_dims('spc_crop', -1).assign_coords(spc_crop=[spc]).rename('N_fertl')
                         For1 = For1.combine_first(For.to_dataset())
             For1 = For1['N_fertl'].to_dataset()
+            For1.coords['scen'] = [data + '-' + val for val in For1.coords['scen'].values]
+
+        if data in ['LUH3']:
+            For1 = For1.sel(scen=['h', 'vl'], year=slice(2022, None))            
+            for spc in crop_species:
+                for typ, spcs in crop_type.items():
+                    if spc in spcs:
+                        For = For1['fertl_'+typ].expand_dims('spc_crop', -1).assign_coords(spc_crop=[spc]).rename('N_fertl')
+                        For1 = For1.combine_first(For.to_dataset())
+            For1 = For1['N_fertl'].to_dataset()
+            For1.coords['scen'] = [data + '-' + val for val in For1.coords['scen'].values]
             
         ## append to final list (with new dimension)
         For0.append(For1)
@@ -433,7 +439,7 @@ def load_Ndep_scen(datasets=['ISIMIP3b'],
             For1['N_dep'] = For1['nhx'].fillna(0)+For1['noy'].fillna(0)
             For1 = For1['N_dep'].rename({'soc':'scen'})
             For1['scen'] = [data+'-'+val for val in For1['scen'].values]
-    
+
         ## append to final list (with new dimension)
         For0.append(For1)
         del For1
