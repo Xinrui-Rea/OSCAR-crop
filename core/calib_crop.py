@@ -29,7 +29,7 @@ def calib_Nfertl_ISIMIP3b(path_in=f'{path_data}drivers/', path_out=f'{path_data}
         for key, value in crop_type.items():
             if spc in value: Par['N_fertl_0'].loc[{'spc_crop':spc}] = da['fertl_'+key].fillna(0)
 
-    if path_out is not None: Par.to_netcdf(path_out + f'N_fertl__ISIMIP3b__{mod_region}.nc')
+    if path_out is not None: Par.to_netcdf(path_out + f'N_fertl__ISIMIP3b_{mod_region}.nc')
 
     return Par
 
@@ -43,7 +43,7 @@ def calib_Ndep_ISIMIP3b(path_in=f'{path_data}drivers/', path_out=f'{path_data}pa
     Par = xr.Dataset()
     Par['N_dep_0'] = da['nhx'].fillna(0) + da['noy'].fillna(0)
 
-    if path_out is not None: Par.to_netcdf(path_out + f'N_dep__ISIMIP3b__{mod_region}.nc')
+    if path_out is not None: Par.to_netcdf(path_out + f'N_dep__ISIMIP3b_{mod_region}.nc')
 
     return Par
     
