@@ -57,7 +57,7 @@ def logitnorm_distrib_param(mean, std):
 ##################################################
 ## 2. DEAL WITH PARAMETERS
 ##################################################
-def extrat_crop_par(Par0):
+def extract_crop_par(Par0):
     '''
     Function to extract parameters for the crop emulator
 
@@ -79,7 +79,7 @@ def extrat_crop_par(Par0):
     var_list = [f'{chr(97+i)}_{var}' for i in range(3) for var in ['CO2', 'Tgs', 'Pgs']]
     for var in var_list:
         for num in np.arange(7):
-            Par[f'{var}_{str(num)}'] = Par0[var].where(Par0[f'fct_{var.split('_')[-1]}'] == num)
+            Par[f'{var}_{str(num)}'] = Par0[var].where(Par0[f'fct_{var.split("_")[-1]}'] == num)
     Par = Par.drop_vars(var_list)
     Par = Par.drop_vars(['fct_CO2', 'fct_Tgs', 'fct_Pgs'])
     return Par    
@@ -209,61 +209,100 @@ def generate_config(Par0, nMC, kde_to_mod=False, mod_to_unc=False, mod_noise=0.1
 
     ## draw unc_ configurations
     for par in par_unc_list:
-        assert len(Par[par].dims) == 1
-        distrib = Par[par].dims[0].split('unc_')[-1]
+        distrib = [dim.split('unc_')[-1] for dim in Par[par].dims if 'unc_' in dim]
+        assert len(distrib) == 1, "Parameter '{}' has multiple uncertainty dimensions: {}".format(par, Par[par].dims)
+        distrib = distrib[0]
 
-        ## Normal distrib
-        if distrib == 'Norm':
-            mean, std = Par[par].sel(unc_Norm=['mean', 'std']).values
-            mu, sigma = mean, abs(std)
-            Norm = xr.DataArray(st.norm.rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config})
-            Par_mc[par] = mu + sigma * Norm
+        Par_mc[par] = sum([xr.zeros_like(Par[par].coords[coord], dtype=float) for coord in Par[par].coords if 'unc_' not in coord] + [Par_mc.coords['config']])
+        dim_names = [dim for dim in Par[par].dims if 'unc_' not in dim]
+        dim_sizes = [Par.sizes[dim] for dim in dim_names]
+        index_iterator = np.ndindex(*dim_sizes)
 
-        ## LogNormal distrib
-        elif distrib == 'LogNorm':
-            mean, std = Par[par].sel(unc_LogNorm=['mean', 'std']).values
-            mu, sigma = lognorm_distrib_param(abs(mean), abs(std))
-            Norm = xr.DataArray(st.norm.rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config})
-            Par_mc[par] = np.sign(mean) * np.exp(mu + sigma * Norm)
+        for indices in index_iterator:
+            index_sel = {dim_name: index for dim_name, index in zip(dim_names, indices)}
+            par_sel = Par[par].isel(index_sel, drop=True)
+            ## Normal distrib
+            if distrib == 'Norm':
+                mean = par_sel.sel(unc_Norm='mean', drop=True)
+                std = par_sel.sel(unc_Norm='std', drop=True)
+                mu, sigma = mean, np.absolute(std)
+                Norm = xr.DataArray(st.norm.rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config})
+                if len(dim_sizes) > 0:
+                    Par_mc[par].isel(index_sel)[:] = mu + sigma * Norm
+                else:
+                    Par_mc[par] = mu + sigma * Norm
 
-        ## LogitNormal distrib
-        elif distrib == 'LogitNorm':
-            mean, std = Par[par].sel(unc_LogitNorm=['mean', 'std']).values
-            mu, sigma = logitnorm_distrib_param(abs(mean), abs(std))
-            if np.isnan([mu, sigma]).any(): raise RuntimeError('Could not infer LogitNorm distribution for parameter {}'.format(par)) 
-            Norm = xr.DataArray(st.norm.rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config})
-            Par_mc[par] = (1 + np.exp(mu + sigma * Norm)**-1)**-1
+            ## LogNormal distrib
+            elif distrib == 'LogNorm':
+                mean = par_sel.sel(unc_LogNorm='mean', drop=True)
+                std = par_sel.sel(unc_LogNorm='std', drop=True)
+                mu, sigma = lognorm_distrib_param(abs(mean), np.absolute(std))
+                Norm = xr.DataArray(st.norm.rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config})
+                if len(dim_sizes) > 0:
+                    Par_mc[par].isel(index_sel)[:] = np.sign(mean) * np.exp(mu + sigma * Norm)
+                else:
+                    Par_mc[par] = np.sign(mean) * np.exp(mu + sigma * Norm)
 
-        ## two HalfNormal distribs
-        elif distrib == '2HalfNorm':
-            mean, std_neg, std_pos = Par[par].sel(unc_2HalfNorm=['mean', 'std_neg', 'std_pos']).values
-            mu, sigma_neg, sigma_pos = mean, abs(std_neg), abs(std_pos)
-            Bool = xr.DataArray(st.randint(0, 2).rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config})
-            HalfNorm = xr.DataArray(st.halfnorm.rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config})
-            Par_mc[par] = mu + (Bool * sigma_pos - (1 - Bool) * sigma_neg) * HalfNorm
+            ## LogitNormal distrib
+            elif distrib == 'LogitNorm':
+                mean = par_sel.sel(unc_LogitNorm='mean', drop=True)
+                std = par_sel.sel(unc_LogitNorm='std', drop=True)
+                mu, sigma = logitnorm_distrib_param(abs(mean), np.abs(std))
+                if np.isnan([mu, sigma]).any(): raise RuntimeError('Could not infer LogitNorm distribution for parameter {}'.format(par)) 
+                Norm = xr.DataArray(st.norm.rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config})
+                if len(dim_sizes) > 0:
+                    Par_mc[par].isel(index_sel)[:] = (1 + np.exp(mu + sigma * Norm)**-1)**-1
+                else:
+                    Par_mc[par] = (1 + np.exp(mu + sigma * Norm)**-1)**-1
 
-        ## Uniform distrib
-        elif distrib == 'Uniform':
-            mini, maxi = Par[par].sel(unc_Uniform=['mini', 'maxi']).values
-            Uniform = xr.DataArray(st.uniform.rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config})
-            Par_mc[par] = mini + (maxi - mini) * Uniform
+            ## two HalfNormal distribs
+            elif distrib == '2HalfNorm':
+                mean = par_sel.sel(unc_2HalfNorm='mean', drop=True)
+                std_neg = par_sel.sel(unc_2HalfNorm='std_neg', drop=True)
+                std_pos = par_sel.sel(unc_2HalfNorm='std_pos', drop=True)
+                mu, sigma_neg, sigma_pos = mean, abs(std_neg), np.abs(std_pos)
+                Bool = xr.DataArray(st.randint(0, 2).rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config})
+                HalfNorm = xr.DataArray(st.halfnorm.rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config})
+                if len(dim_sizes) > 0:
+                    Par_mc[par].isel(index_sel)[:] = mu + (Bool * sigma_pos - (1 - Bool) * sigma_neg) * HalfNorm
+                else:
+                    Par_mc[par] = mu + (Bool * sigma_pos - (1 - Bool) * sigma_neg) * HalfNorm
 
-        ## Triangle distrib
-        elif distrib == 'Triangle':
-            mode, mini, maxi = Par[par].sel(unc_Uniform=['mode', 'mini', 'maxi']).values
-            Triang = xr.DataArray(st.triang(c=(mode-mini)/(maxi-mini)).rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config})
-            Par_mc[par] = mini + (maxi - mini) * Triang
+            ## Uniform distrib
+            elif distrib == 'Uniform':
+                mini = par_sel.sel(unc_Uniform='mini', drop=True)
+                maxi = par_sel.sel(unc_Uniform='maxi', drop=True)
+                Uniform = xr.DataArray(st.uniform.rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config})
+                if len(dim_sizes) > 0:
+                    Par_mc[par].isel(index_sel)[:] = mini + (maxi - mini) * Uniform
+                else:
+                    Par_mc[par] = mini + (maxi - mini) * Uniform
+                    
+            ## Triangle distrib
+            elif distrib == 'Triangle':
+                mode = par_sel.sel(unc_Uniform='mode', drop=True)
+                mini = par_sel.sel(unc_Uniform='mini', drop=True)
+                maxi = par_sel.sel(unc_Uniform='maxi', drop=True)
+                Triang = xr.DataArray(st.triang(c=(mode-mini)/(maxi-mini)).rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config})
+                if len(dim_sizes) > 0:
+                    Par_mc[par].isel(index_sel)[:] = mini + (maxi - mini) * Triang
+                else:
+                    Par_mc[par] = mini + (maxi - mini) * Triang
 
-        ## Discrete Uniform distrib
-        elif distrib == 'Choice':
-            mini, maxi = Par[par].sel(unc_Choice=['mini', 'maxi']).values
-            mini, maxi = min(mini, maxi), max(mini, maxi)
-            Choice = xr.DataArray(st.randint(mini, maxi + 1).rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config})
-            Par_mc[par] = Choice
+            ## Discrete Uniform distrib
+            elif distrib == 'Choice':
+                mini = par_sel.sel(unc_Choice='mini', drop=True)
+                maxi = par_sel.sel(unc_Choice='maxi', drop=True)
+                mini, maxi = np.minimum(mini, maxi), np.maximum(mini, maxi)
+                Choice = xr.DataArray(st.randint(mini, maxi + 1).rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config})
+                if len(dim_sizes) > 0:
+                    Par_mc[par].isel(index_sel)[:] = Choice
+                else:
+                    Par_mc[par] = Choice
 
-        ## error otherwise
-        else:
-            raise RuntimeError("Distribution {} not implemented for parameter '{}'".format(distrib, par))
+            ## error otherwise
+            else:
+                raise RuntimeError("Distribution {} not implemented for parameter '{}'".format(distrib, par))
 
     ## draw mod_ configurations
     ## discrete draw of each mod
