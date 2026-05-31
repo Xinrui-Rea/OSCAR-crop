@@ -120,7 +120,7 @@ def restore_crop_par(Par0):
 ##################################################
 
 ## generate all Monte Carlo configurations 
-def generate_config(Par0, nMC, kde_to_mod=False, mod_to_unc=False, mod_noise=0.1, kde_bw=None, seed=None, par_exclude=None):
+def generate_config(Par0, nMC, kde_to_mod=False, mod_to_unc=False, mod_noise=0.1, kde_bw=None, seed=None, par_exclude=None, noise_exclude=None):
     '''
     Function to generate Monte Carlo configuration (= parameters) for OSCAR.
     
@@ -146,6 +146,8 @@ def generate_config(Par0, nMC, kde_to_mod=False, mod_to_unc=False, mod_noise=0.1
     seed (int)              seed for random number generation forwarded to numpyp.random.default_rng;
                             default = None
     par_exclude (list)      list of parameters to exclude from the MC generation;
+                            default = None
+    noise_exclude (list)    list of parameters to exclude from the noise generation;
                             default = None
     '''
 
@@ -315,6 +317,7 @@ def generate_config(Par0, nMC, kde_to_mod=False, mod_to_unc=False, mod_noise=0.1
     ## adding noise based on Von Mises (if requested)
     if mod_noise > 0:
         for par in par_mod_list:
+            if noise_exclude is not None and par in noise_exclude: continue
             Noise = xr.DataArray(st.vonmises_line(kappa=1/mod_noise**2).rvs(size=nMC, random_state=rng), coords={'config': Par_mc.config}) / np.pi
             Par_mc[par] *= 1 + Noise
         for mod in mod_list: del Par_mc[mod]
