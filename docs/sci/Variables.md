@@ -3,6 +3,7 @@
 | In Code | In papers | Units | Notes |
 | --- | --- | --- | --- |
 | `N_fertl` | $N _\mathrm{fer}$ | kgN yr<sup>-1</sup> | nitrogen fertilizer application rate |
+| `N_dep` | $N_\mathrm{dep}$ | kgN yr<sup>-1</sup> | nitrogen deposition |
 | `Ac` | $A _\mathrm{c}$ | ha | cropland area |
 | `Ah` | $A _\mathrm{h}$ | ha | harvested area |
 |||||
@@ -12,6 +13,7 @@
 
 | In Code | In papers | Units | Notes |
 | --- | --- | --- | --- |
+| `D_CO2` | $\Delta CO_\mathrm{2}$ | ppm | CO<sub>2</sub> concentration |
 | `D_Tl` | $\Delta T_\mathrm{L}$ | °C | regional temperature |
 | `D_Pl` | $\Delta P_\mathrm{L}$ | mm yr<sup>-1</sup> | regional precipitation |
 |||||
@@ -20,7 +22,6 @@
 
 | In Code | In Papers | Units | Notes |
 | --- | --- | --- | --- |
-| `D_CO2` | $\Delta CO_\mathrm{2}$ | ppm | CO<sub>2</sub> concentration |
 | `D_Tgs` | $\Delta T_\mathrm{gs}$ | °C | growing season temperature |
 | `D_Pgs` | $\Delta P_\mathrm{gs}$ | mm yr<sup>-1</sup> | growing season precipitation |
 | `NI` | $NI$ | kgN yr<sup>-1</sup> |  nirtrogen input |

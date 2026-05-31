@@ -3,13 +3,13 @@
 ## Prepare Input Data
 
 **Prepare drivers**
-- Drivers for OSCAR
+- Drivers for OSCAR: anthropogenic emissions, land use, wood harvest
 - Drivers for crop emulator: nitrogen fertilizer application rate
 
 ## Load Parameters
 
 - Load parameters from OSCAR
-- Load parameters from `core_fct.Par_CROP`
+- Load parameters from `core.Par_crop`
 
 
 ## Run the Emulator

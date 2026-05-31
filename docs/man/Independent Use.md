@@ -16,7 +16,7 @@
 
 ## Load Parameters
 
-- Load parameters from `core_fct.Par_CROP`
+- Load parameters from `core.Par_crop`
 
 ## Run the Emulator
 
