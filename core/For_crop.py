@@ -565,8 +565,10 @@ def load_harvested_hist(datasets=['Adalibieke_2023', 'Waha_2020', 'Becker-Reshef
     
     ## order dimensions
     For = For.drop_sel(spc_crop=[spc for spc in For.spc_crop.values if spc not in crop_species])
-    For = For.transpose(*(['year', 'spc_crop', 'reg_code'] + [var for var in For.coords if 'data' in var]))
-
+    if 'year' in For.coords:
+        For = For.transpose(*(['year', 'spc_crop', 'reg_code'] + [var for var in For.coords if 'data' in var]))
+    else:
+        For = For.transpose(*(['spc_crop', 'reg_code'] + [var for var in For.coords if 'data' in var]))
     ## reapply units
     for VAR in For:
         if VAR in units.keys():
