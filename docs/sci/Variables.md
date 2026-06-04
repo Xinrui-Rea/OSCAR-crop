@@ -1,3 +1,6 @@
+# All Variables
+![Model Processes](./Food%20Crop%20Emulator%20Processes.png)
+
 # Drivers
 
 | In Code | In papers | Units | Notes |
@@ -6,13 +9,6 @@
 | `N_dep` | $N_\mathrm{dep}$ | kgN yr<sup>-1</sup> | nitrogen deposition |
 | `Ac` | $A _\mathrm{c}$ | ha | cropland area |
 | `Ah` | $A _\mathrm{h}$ | ha | harvested area |
-|||||
-
-
-# Input Variables
-
-| In Code | In papers | Units | Notes |
-| --- | --- | --- | --- |
 | `D_CO2` | $\Delta CO_\mathrm{2}$ | ppm | CO<sub>2</sub> concentration |
 | `D_Tl` | $\Delta T_\mathrm{L}$ | °C | regional temperature |
 | `D_Pl` | $\Delta P_\mathrm{L}$ | mm yr<sup>-1</sup> | regional precipitation |
@@ -29,13 +25,13 @@
 | `RT` | $RT$ | 1 | temperature-yield response |
 | `RP` | $RP$ | 1 | precipitation-yield response |
 | `RN` | $RN$ | 1 | nitrogen-yield response |
+| CY | $CY$ | tDM ha<sup>-1<sup> | crop yield |
+| BY | $BY$ | tDM ha<sup>-1<sup> | aboveground biomass yield |
 |||||
 
 # Output Variables
 
 | In Code | In Papers | Units | Notes |
 | --- | --- | --- | --- |
-| CY | $CY$ | tDM ha<sup>-1<sup> | crop yield |
-| BY | $BY$ | tDM ha<sup>-1<sup> | aboveground biomass yield |
 | RY | $RY$ | tDM ha<sup>-1<sup> | crop residue yield |
 |||||
