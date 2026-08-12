@@ -301,7 +301,7 @@ def load_reg_coords(mod_region='Sub-national', dir=f'{path_data}regions/', file_
     assert len(long_name) == len(reg_code), 'The number of long names does not match the number of region codes.'
     assert all([reg in long_name.keys() for reg in reg_code]), 'Some long names are missing for the given region.'
 
-    coords = xr.Dataset(coords={'reg_code': reg_code, 'long_name': ('reg_code', [long_name[reg] for reg in reg_code])})
+    coords = xr.Dataset(coords={'reg_code': reg_code, 'reg_name': ('reg_code', [long_name[reg] for reg in reg_code])})
 
     return coords
 
