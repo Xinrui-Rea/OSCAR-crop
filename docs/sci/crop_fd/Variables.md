@@ -1,5 +1,5 @@
 # All Variables
-![Model Processes](./Food%20Crop%20Emulator%20Processes.png)
+![Model Processes](./Processes.png)
 
 # Drivers
 
@@ -25,13 +25,13 @@
 | `RT` | $RT$ | 1 | temperature-yield response |
 | `RP` | $RP$ | 1 | precipitation-yield response |
 | `RN` | $RN$ | 1 | nitrogen-yield response |
-| CY | $CY$ | tDM ha<sup>-1<sup> | crop yield |
-| BY | $BY$ | tDM ha<sup>-1<sup> | aboveground biomass yield |
+| `CY` | $CY$ | tDM ha<sup>-1<sup> | crop yield |
+| `BY` | $BY$ | tDM ha<sup>-1<sup> | aboveground biomass yield |
 |||||
 
 # Output Variables
 
 | In Code | In Papers | Units | Notes |
 | --- | --- | --- | --- |
-| RY | $RY$ | tDM ha<sup>-1<sup> | crop residue yield |
+| `RY` | $RY$ | tDM ha<sup>-1<sup> | crop residue yield |
 |||||
