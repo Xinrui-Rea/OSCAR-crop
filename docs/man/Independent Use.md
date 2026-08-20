@@ -1,30 +1,48 @@
-# Step-by-step
+<h1>Step-by-step</h1>
 
-## Prepare Input Data
+<h2>1. Prepare Input Data</h2>
 
-**Prepare drivers**
-- CO₂ concentration
-- Regional temperature
-- Regional precipitation
-- Nitrogen fertilizer application rate
+<p><strong>Prepare drivers:</strong></p>
+<ul>
+  <li>CO<sub>2</sub> concentration</li>
+  <li>Regional temperature</li>
+  <li>Regional precipitation</li>
+  <li>Nitrogen fertilizer application rate</li>
+</ul>
 
+<p><strong>Offset the following drivers by their preindustrial levels:</strong></p>
+<ul>
+  <li>CO<sub>2</sub> concentration</li>
+  <li>Regional temperature</li>
+  <li>Regional precipitation</li>
+</ul>
 
-**Offset drivers by their preindustrial levels**
-- CO₂ concentration
-- Regional temperature
-- Regional precipitation
+<h2>2. Load Parameters</h2>
 
-## Load Parameters
+<ul>
+  <li>Load parameters from <code>core.Par_crop</code>.</li>
+</ul>
 
-- Load parameters from `core.Par_crop`
+<h2>3. Run the Emulator</h2>
 
-## Run the Emulator
+<p><strong>Load the CROP emulator:</strong></p>
 
-**Load CROP emulator by running**
+<pre><code>from core.OSCAR_crop import CROP
 
-```python
-from core.OSCAR_crop import CROP
-CROP = CROP()
-```
+CROP = CROP()</code></pre>
 
-## Analyze Output
+<h2>4. Analyze Output</h2>
+
+<br>
+
+<p align="center">
+  <big><a href="./Coupling%20with%20OSCAR.md">⬅️ Previous page: Coupling with OSCAR</a></big>
+</p>
+
+<p align="center">
+  <big><a href="../../README.md">🏠 Home</a></big>
+</p>
+
+<p align="center">
+  <big><a href="./Coupling%20with%20OSCAR.md">Next page: Coupling with OSCAR ➡️</a></big>
+</p>

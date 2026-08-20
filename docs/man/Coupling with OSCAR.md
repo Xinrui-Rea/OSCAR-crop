@@ -1,24 +1,41 @@
-# Step-by-step
+<h1>Step-by-step</h1>
 
-## Prepare Input Data
+<h2>1. Prepare Input Data</h2>
 
-**Prepare drivers**
-- Drivers for OSCAR: anthropogenic emissions, land use, wood harvest
-- Drivers for crop emulator: nitrogen fertilizer application rate
+<p><strong>Prepare the required drivers:</strong></p>
 
-## Load Parameters
+<ul>
+  <li><strong>OSCAR:</strong> anthropogenic emissions, land use, and wood harvest</li>
+  <li><strong>CROP emulator:</strong> nitrogen fertilizer application rate</li>
+</ul>
 
-- Load parameters from OSCAR
-- Load parameters from `core.Par_crop`
+<h2>2. Load Parameters</h2>
 
+<ul>
+  <li>Load parameters from OSCAR.</li>
+  <li>Load parameters from <code>core.Par_crop</code>.</li>
+</ul>
 
-## Run the Emulator
+<h2>3. Run the Emulator</h2>
 
-**Load CROP emulator by running**
+<p><strong>Load the food crop emulator:</strong></p>
 
-```python
-from core.OSCAR_crop import CROP
-CROP = CROP()
-```
+<pre><code>from core.OSCAR_crop import CROP
 
-## Analyze Output
+CROP = CROP()</code></pre>
+
+<h2>4. Analyze Output</h2>
+
+<br>
+
+<p align="center">
+  <big><a href="./Independent%20Use.md">⬅️ Previous page: Independent Use</a></big>
+</p>
+
+<p align="center">
+  <big><a href="../../README.md">🏠 Home</a></big>
+</p>
+
+<p align="center">
+  <big><a href="./Independent%20Use.md">Next page: Independent Use ➡️</a></big>
+</p>
